@@ -8,7 +8,7 @@ package game;
 /**
  *
  * @author jared
- */sdgSFhsfhsfh
+ 
 public class Game {
 
     /**
