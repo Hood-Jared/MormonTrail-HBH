@@ -5,17 +5,22 @@
  */
 package byui.cit260.mormontrail.game;
 
-/**
- *
- * @author jared  -  test
- 
-public class Game {
+import java.io.Serializable;
+import java.util.Objects;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+
+public class Game implements Serializable{
+   private String name;
+   
+    public Game() {
+   }
+
+    public String getDaysOnTrail() {
+        return daysOnTrail;
+    }
+
+    public String getPace() {
+        return name;
     }
     
 }
