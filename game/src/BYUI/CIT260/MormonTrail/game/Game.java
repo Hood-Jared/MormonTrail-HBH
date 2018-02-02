@@ -5,6 +5,11 @@
  */
 package byui.cit260.mormontrail.game;
 
+/**
+*
+* @author Chaskiel, Jared, Heather
+*/
+
 import java.io.Serializable;
 import java.util.Objects;
 
