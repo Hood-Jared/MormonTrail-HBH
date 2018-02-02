@@ -18,7 +18,7 @@ public class Player implements Serializable{
     public Player() {
    }
 
-   public String getName() {
+   public String getActorName() {
        return name;
    }
 
