@@ -7,7 +7,7 @@ package BYUI.CIT260.MormonTrail.game;
 
 /**
  *
- * @author jared
+ * @author Chas
  */
 public class RegularScene {
     
