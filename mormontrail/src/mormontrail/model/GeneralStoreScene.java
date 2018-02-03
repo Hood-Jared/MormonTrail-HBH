@@ -32,7 +32,12 @@ public class GeneralStoreScene implements Serializable{
       gralItem3 = "Ammo";  
       
     }
+
+    public static void setGralItem1(String gralItem1) {
+        GeneralStoreScene.gralItem1 = gralItem1;
+    }
  
+    
     @Override
     public String toString() {
         return gralItem3 + "Costs $5 per 50 shells";
