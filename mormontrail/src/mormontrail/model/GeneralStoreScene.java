@@ -12,10 +12,8 @@ import java.util.Objects;
  * @author jared
  */
 
-
 public class GeneralStoreScene implements Serializable{
  
-    
     static String gralItem1;  
     static int qtyGralItem1;
     static int qtyCostItem1;
@@ -32,8 +30,12 @@ public class GeneralStoreScene implements Serializable{
       gralItem1 = "Food Stuffs";  
       gralItem2 = "Wagon Wheels";  
       gralItem3 = "Ammo";  
-     
-     
+      
     }
+ 
+    @Override
+    public String toString() {
+        return gralItem3 + "Costs $5 per 50 shells";
     
+}
 }
