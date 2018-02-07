@@ -6,18 +6,19 @@
 package mormontrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
  *
  * @author heather
  */
-public class Map {
+public class Map implements Serializable {
     
 	// class instance variables
 	private String description;
 	private int locationSequence;
-	private Location location;
+	private ArrayList<Location> locations = new ArrayList<Location>();
 
 	public Map() {
 	}
@@ -38,12 +39,12 @@ public class Map {
 		this.locationSequence = locationSequence;
 	}
 
-	public Location getLocation() {
-		return location;
+	public ArrayList<Location> getLocations() {
+		return locations;
 	}
 
-	public void setLocation(Location location) {
-		this.location = location;
+	public void setLocations(ArrayList<Location> locations) {
+		this.locations = locations;
 	}
 
 	@Override

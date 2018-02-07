@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package mormontrail.model;
-
+import java.io.Serializable;	
 /**
  *
  * @author heatherholt
