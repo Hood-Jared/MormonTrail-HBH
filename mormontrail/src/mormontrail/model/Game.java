@@ -21,7 +21,8 @@ public class Game implements Serializable{
 	public int pace;
 	public double milesTraveled;
 	public double currentMoneyBalance;
-	private Map map;
+	private Player player;
+	private Map map;	
    
     public Game() {
    }
@@ -56,6 +57,14 @@ public class Game implements Serializable{
 
 	public void setCurrentMoneyBalance(double currentMoneyBalance) {
 		this.currentMoneyBalance = currentMoneyBalance;
+	}
+
+	public Player getPlayer() {
+		return player;
+	}
+
+	public void setPlayer(Player player) {
+		this.player = player;
 	}
 
 	public Map getMap() {
