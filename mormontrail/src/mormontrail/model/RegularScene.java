@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/*
 package mormontrail.model;
 import java.io.Serializable;
 import java.util.Objects;
@@ -10,6 +12,8 @@ import java.util.Objects;
  *
  * @author Chaskiel
  */
+
+/*
 public class Regular implements Serializable{
     
   
@@ -61,3 +65,4 @@ public class Regular implements Serializable{
     
 }
 
+*/

@@ -10,7 +10,7 @@
  *
  * @author jared
  */
-
+/*
 package mormontrail.controller;
 import java.io.Serializable;
 import java.util.Objects;
@@ -68,3 +68,4 @@ public class InventoryController implements Serializable{
     
 }
 
+*/

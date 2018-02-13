@@ -34,7 +34,7 @@ public class Mormontrail {
 		
 		mapOne.setDescription("A map");
 		mapOne.setLocationSequence(8);
-		mapOne.setLocation(locationEight);
+//		mapOne.setLocation(locationEight);
 		
 		System.out.println(mapOne.toString());
     }

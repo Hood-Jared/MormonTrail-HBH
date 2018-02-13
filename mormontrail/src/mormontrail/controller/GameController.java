@@ -16,7 +16,21 @@ public class GameController implements Serializable{
    
     
     
-  public int calcDailyFoodUsage(int amount,int noPeople)  {
+  public static int calcDailyFoodUsage(int amount,int noPeople)  {
+  
+ /*calcDailyFoodUsage(noPeople, amount): int 
+ 
+BEGIN 
+ 
+ IF (noPeople < 1 OR noPeople > 5) THEN   RETURN -1 
+ 
+ IF (amount < 3 OR amount > 5) THEN   RETURN -1 
+ 
+ consumption = (amount * noPeople) 
+ 
+ RETURN consumption 
+ 
+END */
             
    if (amount < 3 || amount > 5) 
    return -1;
