@@ -16,16 +16,15 @@ public class GameController implements Serializable{
    
     
     
-  public calcDailyFoodUsage(amount, noPeople): int {
-        
-    int amount;
-    int noPeople;
-    
-   if (amount =< 3 || amount >= 5) 
-   {return -1};
+  public int calcDailyFoodUsage(int amount,int noPeople)  {
+            
+   if (amount < 3 || amount > 5) 
+   return -1;
    
-   if (noPeople =< 1 || noPeople >= 5) 
-   {return -1};
+   if (noPeople < 1 || noPeople > 5) 
+   return -1;
+   
+   return amount * noPeople; 
    
 }
            
