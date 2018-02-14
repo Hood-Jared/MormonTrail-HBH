@@ -6,25 +6,34 @@ package mormontrail.controller;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author Chaskiel
- */
 
-/*
+
+ // @author Chaskiel
+
+
+
 public class RiverCrossingControl {
     
-    calcCrossingOfRiver(int weight, int depth) {
+  public int  calcCrossingOfRiver(int weight, int depth) {
 
 
-if (weight < 300 || depth < 1)
+if (weight < 100 || depth < 1)
 return -1;
 
-if (weight >301 || depth > 10)
+
+if (weight > 300 || depth > 5)
 return -1;
 
-return weight + depth; 
-}
+int probability = weight * depth;
+
+int result = probability /100; 
+
+return result; 
+
+    
+       
+    
+    
+    }
 
 }
-*/
