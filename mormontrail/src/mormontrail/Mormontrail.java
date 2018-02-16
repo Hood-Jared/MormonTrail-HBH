@@ -9,6 +9,7 @@ import mormontrail.model.Location;
 import mormontrail.model.LocationType;
 import mormontrail.model.Map;
 import mormontrail.model.LocationType;
+import mormontrail.view.StartProgramView;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Mormontrail {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Location locationEight = new Location();
+       /* Location locationEight = new Location();
 		
 		locationEight.setName("Fort Bridger");
 		locationEight.setSceneType(LocationType.Fort);
@@ -37,6 +38,12 @@ public class Mormontrail {
 //		mapOne.setLocation(locationEight);
 		
 		System.out.println(mapOne.toString());
+*/
+       
+       StartProgramView startProgramView = new StartProgramView();
+       startProgramView.display();
+       
+       
     }
     
 }
