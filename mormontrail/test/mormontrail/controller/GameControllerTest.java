@@ -5,8 +5,10 @@
  */
 package mormontrail.controller;
 
+import org.junit.After;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
@@ -16,6 +18,14 @@ public class GameControllerTest {
     
     public GameControllerTest() {
     }
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
 
     /**
      * Test of calcDailyFoodUsage method, of class GameController.
@@ -115,5 +125,20 @@ public class GameControllerTest {
         
         
     }
+
+	/**
+	 * Test of calcDailyTravel method, of class GameController.
+	 */
+	@Test
+	public void testCalcDailyTravel() {
+		System.out.println("calcDailyTravel");
+		int pace = 0;
+		int oxenStamina = 0;
+		int expResult = 0;
+		int result = GameController.calcDailyTravel(pace, oxenStamina);
+		assertEquals(expResult, result);
+		// TODO review the generated test code and remove the default call to fail.
+		fail("The test case is a prototype.");
+	}
     
 }
