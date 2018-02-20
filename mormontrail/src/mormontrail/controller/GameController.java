@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Objects;
 /**
  *
- * @author jared
+ * @author jared, heather, chas
  */
 
 public class GameController implements Serializable{
@@ -41,6 +41,22 @@ END */
    return amount * noPeople; 
    
 }
+  
+  public static int calcDailyTravel(int pace,int oxenStamina) {
+		  
+		  /* calcDailyTravel(pace, oxenStamina): int
+				BEGIN
+					IF (pace < 2 OR pace > 4) THEN RETURN -1
+					IF (oxenStamina < 3 OR oxenStamina > 5) THEN RETURN -1
+					RETURN pace*oxenStamina
+				END */
+		if (pace < 2 || pace > 4)
+			return -1;
+		if (oxenStamina < 3 || oxenStamina > 5)
+			return -1;
+		return pace * oxenStamina;
+		
+  }
            
         
            
