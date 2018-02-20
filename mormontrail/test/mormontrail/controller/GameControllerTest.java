@@ -127,18 +127,75 @@ public class GameControllerTest {
     }
 
 	/**
-	 * Test of calcDailyTravel method, of class GameController.
+	 * Tests of calcDailyTravel method, of class GameController.
 	 */
 	@Test
-	public void testCalcDailyTravel() {
-		System.out.println("calcDailyTravel");
-		int pace = 0;
-		int oxenStamina = 0;
-		int expResult = 0;
+	public void test1CalcDailyTravel() {
+		// Test Case 1
+		int pace = 4;
+		int oxenStamina = 4;
+		int expResult = 16;
 		int result = GameController.calcDailyTravel(pace, oxenStamina);
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
     
+	@Test
+	public void test2CalcDailyTravel() {
+		// Test Case 2
+		int pace = 0;
+		int oxenStamina = 4;
+		int expResult = -1;
+		int result = GameController.calcDailyTravel(pace, oxenStamina);
+		assertEquals(expResult, result);
+	}
+	
+	@Test
+	public void test3CalcDailyTravel() {
+		// Test Case 3
+		int pace = 3;
+		int oxenStamina = 0;
+		int expResult = -1;
+		int result = GameController.calcDailyTravel(pace, oxenStamina);
+		assertEquals(expResult, result);
+	}
+	
+	@Test
+	public void test4CalcDailyTravel() {
+		// Test Case 4
+		int pace = 1;
+		int oxenStamina = 5;
+		int expResult = -1;
+		int result = GameController.calcDailyTravel(pace, oxenStamina);
+		assertEquals(expResult, result);
+	}
+	
+	@Test
+	public void test5CalcDailyTravel() {
+		// Test Case 5
+		int pace = 2;
+		int oxenStamina = 5;
+		int expResult = 10;
+		int result = GameController.calcDailyTravel(pace, oxenStamina);
+		assertEquals(expResult, result);
+	}
+	
+	@Test
+	public void test6CalcDailyTravel() {
+		// Test Case 6
+		int pace = 4;
+		int oxenStamina = 3;
+		int expResult = 12;
+		int result = GameController.calcDailyTravel(pace, oxenStamina);
+		assertEquals(expResult, result);
+	}
+	
+	@Test
+	public void test7CalcDailyTravel() {
+		// Test Case 7
+		int pace = 4;
+		int oxenStamina = 5;
+		int expResult = 20;
+		int result = GameController.calcDailyTravel(pace, oxenStamina);
+		assertEquals(expResult, result);
+	}
 }
