@@ -72,7 +72,7 @@ RETURN inputs
     private boolean doAction(String[] inputs){
     
     System.out.println("doAction() called");
-    System.out.println("tinputs = " + inputs [0]);
+    System.out.println("tinputs = " + inputs[0]);
     
     return true;
     
