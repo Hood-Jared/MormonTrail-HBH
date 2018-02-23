@@ -74,25 +74,7 @@ RETURN inputs
               valid = true;
               return trim;
           }
-              
-         
-         
-         
-         
-         
-          
-          
-          
-          
-          
-          
-         
-          
-         
-          
-          
-          
-          
+   
       } 
     
         
