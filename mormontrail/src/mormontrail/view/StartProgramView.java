@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package mormontrail.view;
+import java.util.Scanner;
 
 /**
  *
@@ -18,7 +19,7 @@ public class StartProgramView {
     }
     
     
-    public String[] getInputs(){
+    public String getInputs(){
         
     /*  
         getInputs(): String[] {
@@ -44,6 +45,8 @@ RETURN inputs
         
        */
     
+    
+    
      String[] inputs = new String [1];
     
        System.out.println("this is the discription of the view");
@@ -52,6 +55,40 @@ RETURN inputs
        
       while (valid == false){
           
+        
+      
+        
+          System.out.println("enter your name");
+          
+          Scanner input = new Scanner(System.in);
+          String name = input.nextLine();
+         String trim = name.trim();
+          
+          int length = trim.length ();
+          
+          if (length < 1){
+                 System.out.println("re enter a name with more than one letter");
+                 
+          }
+          else{
+              valid = true;
+              return trim;
+          }
+              
+         
+         
+         
+         
+         
+          
+          
+          
+          
+          
+          
+         
+          
+         
           
           
           
@@ -105,6 +142,9 @@ RETURN inputs
         
     }
  
-    
    
+    private String getInputs(){
+        
+    }
 }
+
