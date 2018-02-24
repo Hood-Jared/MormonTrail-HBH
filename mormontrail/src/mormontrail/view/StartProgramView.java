@@ -13,62 +13,6 @@ import mormontrail.model.Player;
  * @author Chaskiel, Jared, Heather
  */
 public class StartProgramView {
-	
-	//public String[] inputs;
-	
-    public StartProgramView(){
-	}
-    private Object keyboard;
-
-        
-              
-	private boolean displayWelcome() {
-		System.out.println  ("\n       WELCOME TO THE MORMON TRAIL         *"
-                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
-                +"\n*                                          *"
-                +"\n*          Get your family ready!          *"
-                +"\n*     You're about to embark on a great    *"
-                +"\n*       Adventure from start to finish.    *"
-                +"\n*  Follow the trail and get thru dangers   *"
-                +"\n*        Watch out for Deep Rivers!        *"
-                +"\n*      Make sure you have enough food!     *"
-                +"\n*  Make sure to rest enough along the way  *"
-                +"\n*      and Enjoy life in the valley!       *"
-                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
-		return true;
-    }
-    
-    private String getPlayerName(){
-        
-        boolean isValidName = false;
-        String name = "";
-        
-        System.out.println("Please enter your name: ");
-        
-        while(!isValidName){
-            String input = "";
-            input = keyboard.readLine();
-            
-            if (input != null && input.length() >= 2){
-                isValidName = true;
-                name = input;
-                
-            } else {
-                System.out.println("Input is invalid - name must be at least 2 characters");
-            }         
-        }
-        return name;
-    }   
-    
-    private void displayWelcome(String playerName){
-        System.out.println("============================");
-        System.out.println("Welcome " + playerName + ".");
-        System.out.println("Enjoy the game!");
-        System.out.println("============================");
-    }
-
- 
-// Start of code by Chas.
     
     
     public String getInputs(){
