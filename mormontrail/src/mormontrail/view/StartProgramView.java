@@ -91,7 +91,7 @@ RETURN inputs
    
     public String playersName;
 	
-    private boolean doAction(String [] inputs){
+    private boolean doAction(String[] inputs){
     
     /* doAction(inputs): boolean {
 		playersName = get the first value in the inputs array
