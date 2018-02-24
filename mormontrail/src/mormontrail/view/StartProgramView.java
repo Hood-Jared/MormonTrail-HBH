@@ -10,15 +10,75 @@ import mormontrail.model.Player;
 
 /**
  *
- * @author Chaskiel
+ * @author Chaskiel, Jared
  */
 public class StartProgramView {
+<<<<<<< HEAD
 	
 	//public String[] inputs;
 	
     public StartProgramView(){
-    
+=======
+
+    private Object keyboard;
+
+   
+    public StartProgramView(){
+        
+              
+System.println  ("\n       WELCOME TO THE MORMON TRAIL         *"
+                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
+                +"\n*                                          *"
+                +"\n*          Get your family ready!          *"
+                +"\n*     You're about to embark on a great    *"
+                +"\n*       Adventure from start to finish.    *"
+                +"\n*  Follow the trail and get thru dangers   *"
+                +"\n*        Watch out for Deep Rivers!        *"
+                +"\n*      Make sure you have enough food!     *"
+                +"\n*  Make sure to rest enough along the way  *"
+                +"\n*      and Enjoy life in the valley!       *"
+                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
+        
     }
+
+>>>>>>> 9f5a44bd3a1b25a64d24abdeffa5489d9d162980
+    
+    private String getPlayerName(){
+        
+        boolean isValidName = false;
+        String name = "";
+        
+        System.println("Please enter your name: ");
+        
+        while(!isValidName){
+            String input = "";
+            input = keyboard.readLine();
+            
+            if (input != null && input.length() >= 2){
+                isValidName = true;
+                name = input;
+                
+            } else {
+                System.println("Input is invalid - name must be at least 2 characters");
+            }         
+        }
+        return name;
+    }   
+    
+    private void displayWelcome(String playerName){
+        System.println("============================");
+        System.println("Welcome " + playerName + ".");
+        System.println("Enjoy the game!");
+        System.println("============================");
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        return true;
+    }
+
+ 
+// Start of code by Chas.
     
     
     public String getInputs(){
