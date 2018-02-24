@@ -10,23 +10,19 @@ import mormontrail.model.Player;
 
 /**
  *
- * @author Chaskiel, Jared
+ * @author Chaskiel, Jared, Heather
  */
 public class StartProgramView {
-<<<<<<< HEAD
 	
 	//public String[] inputs;
 	
     public StartProgramView(){
-=======
 
     private Object keyboard;
 
-   
-    public StartProgramView(){
         
               
-System.println  ("\n       WELCOME TO THE MORMON TRAIL         *"
+	System.out.println  ("\n       WELCOME TO THE MORMON TRAIL         *"
                 +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
                 +"\n*                                          *"
                 +"\n*          Get your family ready!          *"
@@ -40,8 +36,6 @@ System.println  ("\n       WELCOME TO THE MORMON TRAIL         *"
                 +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
         
     }
-
->>>>>>> 9f5a44bd3a1b25a64d24abdeffa5489d9d162980
     
     private String getPlayerName(){
         
@@ -153,22 +147,22 @@ RETURN inputs
 	
     private boolean doAction(String[] inputs){
     
-    /* doAction(inputs): boolean {
-		playersName = get the first value in the inputs array
-		player = savePlayer(playersName)
-		IF player == null
-		display “Could not create the player. “ +
-		“Enter a different name.”
-		RETURN false
-		ENDIF
-		DISPLAY "================================================= "
-		+ "Welcome to the game " + playersName
-		+ "We hope you have a lot of fun!”
-		+ "================================================= "
-		mainMenuView = Create a new MainMenuView object
-		mainMenuView.displayMainMenuView()
-		RETURN true
-	} */
+		/* doAction(inputs): boolean {
+			playersName = get the first value in the inputs array
+			player = savePlayer(playersName)
+			IF player == null
+			display “Could not create the player. “ +
+			“Enter a different name.”
+			RETURN false
+			ENDIF
+			DISPLAY "================================================= "
+			+ "Welcome to the game " + playersName
+			+ "We hope you have a lot of fun!”
+			+ "================================================= "
+			mainMenuView = Create a new MainMenuView object
+			mainMenuView.displayMainMenuView()
+			RETURN true
+		} */
 		playersName = inputs[0];
 		Player player = GameController.savePlayer(playersName); 
 		if (player == null) {
