@@ -17,12 +17,13 @@ public class StartProgramView {
 	//public String[] inputs;
 	
     public StartProgramView(){
-
+	}
     private Object keyboard;
 
         
               
-	System.out.println  ("\n       WELCOME TO THE MORMON TRAIL         *"
+	private boolean displayWelcome() {
+		System.out.println  ("\n       WELCOME TO THE MORMON TRAIL         *"
                 +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
                 +"\n*                                          *"
                 +"\n*          Get your family ready!          *"
@@ -34,7 +35,7 @@ public class StartProgramView {
                 +"\n*  Make sure to rest enough along the way  *"
                 +"\n*      and Enjoy life in the valley!       *"
                 +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
-        
+		return true;
     }
     
     private String getPlayerName(){
@@ -42,7 +43,7 @@ public class StartProgramView {
         boolean isValidName = false;
         String name = "";
         
-        System.println("Please enter your name: ");
+        System.out.println("Please enter your name: ");
         
         while(!isValidName){
             String input = "";

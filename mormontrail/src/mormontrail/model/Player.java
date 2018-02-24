@@ -27,7 +27,7 @@ public class Player implements Serializable{
 	private ArrayList<Game> games = new ArrayList<Game>();
    
     public Player() {
-   }
+    }
 
 	public String getName() {
 		return name;
