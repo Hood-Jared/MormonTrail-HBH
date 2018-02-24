@@ -13,5 +13,9 @@ public class MainMenuView {
 
 	public MainMenuView() {
 	}
+
+	void displayMainMenuView() {
+		System.out.println("*** displayMainMenuView()called ***");
+	}
 	
 }

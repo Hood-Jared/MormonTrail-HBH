@@ -54,22 +54,17 @@ public class StartProgramView {
                 name = input;
                 
             } else {
-                System.println("Input is invalid - name must be at least 2 characters");
+                System.out.println("Input is invalid - name must be at least 2 characters");
             }         
         }
         return name;
     }   
     
     private void displayWelcome(String playerName){
-        System.println("============================");
-        System.println("Welcome " + playerName + ".");
-        System.println("Enjoy the game!");
-        System.println("============================");
-    }
-
-    @Override
-    public boolean doAction(String value) {
-        return true;
+        System.out.println("============================");
+        System.out.println("Welcome " + playerName + ".");
+        System.out.println("Enjoy the game!");
+        System.out.println("============================");
     }
 
  
@@ -146,6 +141,8 @@ RETURN inputs
    
     public String playersName;
 	
+	//Start of code by Heather
+	
     private boolean doAction(String[] inputs){
     
 		/* doAction(inputs): boolean {
@@ -171,7 +168,9 @@ RETURN inputs
 			return false;
 		}		
 		System.out.println("**Welcome to the game " + playersName +"!");
-		mainMenuView = new MainMenuView();
+		MainMenuView mainMenuView = new MainMenuView();
+		mainMenuView.displayMainMenuView();
+		return true;
     }
             
     public void display() {
