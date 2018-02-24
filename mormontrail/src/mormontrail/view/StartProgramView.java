@@ -5,16 +5,18 @@
  */
 package mormontrail.view;
 import java.util.Scanner;
+import mormontrail.controller.GameController;
+import mormontrail.model.Player;
 
 /**
  *
  * @author Chaskiel
  */
 public class StartProgramView {
+	
+	//public String[] inputs;
+	
     public StartProgramView(){
-        
-   
-     
     
     }
     
@@ -49,11 +51,11 @@ RETURN inputs
     
      String[] inputs = new String [1];
     
-       System.out.println("this is the discription of the view");
+        System.out.println("this is the discription of the view");
        
-       boolean valid = false; 
+        boolean valid = false; 
        
-      while (valid == false){
+        while (valid == false){
           
         
       
@@ -87,14 +89,34 @@ RETURN inputs
     return inputs;
     }
    
+    public String playersName;
+	
+    private boolean doAction(String [] inputs){
     
-    private boolean doAction(String[] inputs){
-    
-    System.out.println("doAction() called");
-    System.out.println("tinputs = " + inputs[0]);
-    
-    return true;
-    
+    /* doAction(inputs): boolean {
+		playersName = get the first value in the inputs array
+		player = savePlayer(playersName)
+		IF player == null
+		display “Could not create the player. “ +
+		“Enter a different name.”
+		RETURN false
+		ENDIF
+		DISPLAY "================================================= "
+		+ "Welcome to the game " + playersName
+		+ "We hope you have a lot of fun!”
+		+ "================================================= "
+		mainMenuView = Create a new MainMenuView object
+		mainMenuView.displayMainMenuView()
+		RETURN true
+	} */
+		playersName = inputs[0];
+		Player player = GameController.savePlayer(playersName); 
+		if (player == null) {
+			System.out.println("Could not create the player. Enter a different name.");
+			return false;
+		}		
+		System.out.println("**Welcome to the game " + playersName +"!");
+		mainMenuView = new MainMenuView();
     }
             
     public void display() {

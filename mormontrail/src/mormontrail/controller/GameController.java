@@ -6,6 +6,7 @@
 package mormontrail.controller;
 import java.io.Serializable;
 import java.util.Objects;
+import mormontrail.model.Player;
 /**
  *
  * @author jared, heather, chas
@@ -57,6 +58,11 @@ END */
 		return pace * oxenStamina;
 		
   }
+
+	public static Player savePlayer(String playersName) {
+		System.out.println("*** savePlayer()called ***");
+		return new Player();
+	}
            
         
            
