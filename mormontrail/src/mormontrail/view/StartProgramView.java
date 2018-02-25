@@ -77,7 +77,7 @@ RETURN inputs
         
     System.out.println("getInput (called");
     
-    String[] inputs = new String [1];
+    //String[] inputs = new String [1];
     inputs[0] = "testInput";
 
     return inputs;
@@ -113,7 +113,7 @@ RETURN inputs
 		}		
 		System.out.println("**Welcome to the game " + playersName +"!");
 		MainMenuView mainMenuView = new MainMenuView();
-		mainMenuView.displayMainMenuView();
+		mainMenuView.mainMenuView();
 		return true;
     }
 	

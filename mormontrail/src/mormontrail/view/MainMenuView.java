@@ -12,11 +12,6 @@ import mormontrail.model.Player;
 
 public class MainMenuView {
 
-    // Heather's
-	void displayMainMenuView() {
-		System.out.println("*** displayMainMenuView called ***");
-	}
-	// End of Heather's
    
             
 	private boolean displayWelcome() {
@@ -69,13 +64,14 @@ public class MainMenuView {
 	
 
 
-public MainMenuView() {
+public boolean mainMenuView() {
         System.out.println("\nMAIN MENU"
                      + "\nN - Start New Game"
                      + "\nR - Restart Saved Game"
                      + "\nH - Go to Help Menu"
                      + "\nE - Exit"
                      + "\n");
+		return true;
     }
 
 
