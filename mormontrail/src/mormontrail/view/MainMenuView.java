@@ -6,11 +6,10 @@
 package mormontrail.view;
 import java.util.Scanner;
 import mormontrail.controller.GameController;
+import mormontrail.view.StartProgramView;
 import mormontrail.model.Player;
-/**
- *
- * @author heatherholt, Jared
- */
+
+
 public class MainMenuView {
 
     // Heather's
@@ -36,7 +35,7 @@ public class MainMenuView {
 		return true;
     }
     
-    private String getPlayerName(){
+    private String getPlayerName(String args[]){
         
         boolean isValidName = false;
         String name = "";
@@ -47,9 +46,9 @@ public class MainMenuView {
   
             Scanner input = new Scanner(System.in);
             
-            if (input != null && input.length() >= 2){
+            if (input != null ){
                 isValidName = true;
-                name = input;
+                
                 
             } else {
                 System.out.println("Input is invalid - name must be at least 2 characters");
@@ -71,70 +70,57 @@ public class MainMenuView {
 
 
 public MainMenuView() {
-        System.println("\nMAIN MENU"
+        System.out.println("\nMAIN MENU"
                      + "\nN - Start New Game"
-                     + "\nL - Start Saved Game"
-                     + "\nH - Help Menu"
+                     + "\nR - Restart Saved Game"
+                     + "\nH - Go to Help Menu"
                      + "\nE - Exit"
                      + "\n");
     }
 
 
 
-    public boolean doAction(String selection) {
+    public boolean doAction(String selection, Player player) {
 
         char charSel = selection.charAt(0);
 
         switch (charSel) {
             case 'N':
-                this.startNewGame();
+                this.startNewGame(player);
                 break;
             case 'R':
-                this.restartGame();
+                restartGame();
                 break;
             case 'H':
-                this.helpMenu();
+                getMenu();
                 break;
             case 'E':
                 return true;
             default:
-                System.println("Invalid Input - Please try again.");
+                System.out.println("Invalid Input - Please try again.");
                 break;
         }
         return false;
     }
 
-    private void startNewGame() {
-        try {
-            GameControl gc = new GameControl();
-            gc.createNewGame(Mormontrail.getPlayer());
-            GameMenuView gameMenu = new GameMenuView();
-            gameMenu.display();
-        } 
+    public void startNewGame(Player player) {
+        
+            GameController.createNewGame(GameController.getPlayer());
+            GameController.display();
+         
     }
     
 
-    private void startSavedGame() {
+    public void restartGame() {
         
-        this.console.println("\n\nEnter the file path for the file where the game"
-                + " was saved.");
-        
-        String filePath = this.getInput();
-
-        try {
-            // start a saved game
-            GameControl.getSavedGame(filePath);    
-        } 
-
-        
-        GameMenuView gameMenu = new GameMenuView();
+             StartExistingGameView gameMenu = new StartExistingGameView();
         gameMenu.display();
     }
 
-    private void helpMenu() {
-        System.println("HELP MENU CALLED");
+    public void getMenu() {
         HelpMenuView display = new HelpMenuView();
         display.display();
     }
-}
+   
+  
 
