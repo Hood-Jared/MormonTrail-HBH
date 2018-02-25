@@ -87,7 +87,7 @@ RETURN inputs
 	
 	//Start of code by Heather
 	
-    private boolean doAction(String[] inputs){
+    private boolean doAction(String input){
     
 		/* doAction(inputs): boolean {
 			playersName = get the first value in the inputs array
@@ -105,13 +105,13 @@ RETURN inputs
 			mainMenuView.displayMainMenuView()
 			RETURN true
 		} */
-		playersName = inputs[0];
+		playersName = input;
 		Player player = GameController.savePlayer(playersName); 
 		if (player == null) {
 			System.out.println("Could not create the player. Enter a different name.");
 			return false;
 		}		
-		System.out.println("**Welcome to the game " + playersName +"!");
+		System.out.println("** Welcome to the game " + playersName +"! **");
 		MainMenuView mainMenuView = new MainMenuView();
 		mainMenuView.mainMenuView();
 		return true;
@@ -146,9 +146,6 @@ RETURN inputs
         
     }
 
-    private boolean doAction(String input) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
  
    
 }

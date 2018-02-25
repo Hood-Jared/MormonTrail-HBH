@@ -115,7 +115,7 @@ public boolean mainMenuView() {
 
     public void getMenu() {
         HelpMenuView display = new HelpMenuView();
-        display.display();
+        display.displayHelpMenuView();
     }
     
 }
