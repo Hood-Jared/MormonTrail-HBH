@@ -64,11 +64,27 @@ END */
 		return new Player();
 	}
            
-        
-           
-        
+       
+        public static void displayGameController(){
+		System.out.println("*** createNewGame called ***");
             
-    
+        }
+
+    public static void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+           
+      public static Player getPlayer() {
+		System.out.println("*** getPlayer()called ***");
+      return null;
+	
+	}  
+
+    public static void createNewGame(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 }
     
 
