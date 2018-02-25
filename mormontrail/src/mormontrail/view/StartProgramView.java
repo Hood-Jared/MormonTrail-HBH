@@ -116,6 +116,8 @@ RETURN inputs
 		mainMenuView.displayMainMenuView();
 		return true;
     }
+	
+	// End of Heather's code
             
     public void display() {
     /*    endOfView = false
