@@ -5,6 +5,7 @@
  */
 package mormontrail;
 
+import mormontrail.model.Game;
 import mormontrail.model.Location;
 import mormontrail.model.LocationType;
 import mormontrail.model.Map;
@@ -18,6 +19,10 @@ import mormontrail.view.StartProgramView;
  */
 public class Mormontrail {
 
+	
+	private static Game currentGame = null;
+	private static Player player = null;
+	
     /**
      * @param args the command line arguments
      */
@@ -47,8 +52,23 @@ public class Mormontrail {
 	  
        
     }
-	
-  	public static void setPlayer(Player player) {
-		System.out.println("*** setPlayer called ***");
+
+	public static Game getCurrentGame() {
+		return currentGame;
 	}
+
+	public static void setCurrentGame(Game currentGame) {
+		Mormontrail.currentGame = currentGame;
+	}
+
+	public static Player getPlayer() {
+		return player;
+	}
+
+	public static void setPlayer(Player player) {
+		Mormontrail.player = player;
+	}
+	
+
+	
 }
