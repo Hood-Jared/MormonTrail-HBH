@@ -43,7 +43,7 @@ RETURN inputs
     
     
     
-     String[] inputs = new String [1];
+     String inputs = new String();
     
         System.out.println("this is the discription of the view");
        
@@ -58,7 +58,7 @@ RETURN inputs
           
           Scanner input = new Scanner(System.in);
           String name = input.nextLine();
-         String trim = name.trim();
+          String trim = name.trim();
           
           int length = trim.length ();
           
@@ -78,7 +78,7 @@ RETURN inputs
     System.out.println("getInput (called");
     
     //String[] inputs = new String [1];
-    inputs[0] = "testInput";
+    inputs = "testInput";
 
     return inputs;
     }
@@ -133,7 +133,7 @@ RETURN inputs
     boolean endOfView = false;
     
     do {
-        String[] input = getInputs();
+        String input = getInputs();
             if (input.equals("") || input.equals("Q")){
                     return; 
                   
@@ -145,10 +145,11 @@ RETURN inputs
     while (endOfView != true);
         
     }
+
+    private boolean doAction(String input) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
  
    
-    private String getInputs(){
-        
-    }
 }
 
