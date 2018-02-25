@@ -13,6 +13,11 @@ import mormontrail.model.Player;
  */
 public class MainMenuView {
 
+    // Heather's
+	void displayMainMenuView() {
+		System.out.println("*** displayMainMenuView called ***");
+	}
+	// End of Heather's
    
             
 	private boolean displayWelcome() {
@@ -59,6 +64,10 @@ public class MainMenuView {
         System.out.println("Enjoy the game!");
         System.out.println("============================");
     }
+
+
+
+	
 
 
 public MainMenuView() {
