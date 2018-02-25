@@ -11,6 +11,12 @@ package mormontrail.view;
  */
 public class MainMenuView {
 
+	// Heather's
+	void displayMainMenuView() {
+		System.out.println("*** displayMainMenuView called ***");
+	}
+	// End of Heather's
+
 }
 public MainMenuView() {
         System.println("\nMAIN MENU"
