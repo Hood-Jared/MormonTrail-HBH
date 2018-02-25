@@ -6,6 +6,7 @@
 package mormontrail.controller;
 import java.io.Serializable;
 import java.util.Objects;
+import mormontrail.Mormontrail;
 import mormontrail.model.Player;
 /**
  *
@@ -75,10 +76,9 @@ END */
 			return null;
 		}	
 		Player player = new Player();
+		Mormontrail.setPlayer(player);
 		
-		
-		System.out.println("*** savePlayer()called ***");
-		return new Player();
+		return player;
 	}
            
        

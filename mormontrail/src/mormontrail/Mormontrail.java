@@ -9,6 +9,7 @@ import mormontrail.model.Location;
 import mormontrail.model.LocationType;
 import mormontrail.model.Map;
 import mormontrail.model.LocationType;
+import mormontrail.model.Player;
 import mormontrail.view.StartProgramView;
 
 /**
@@ -47,6 +48,7 @@ public class Mormontrail {
        
     }
 	
-    public static void setName() {
+  	public static void setPlayer(Player player) {
+		System.out.println("*** setPlayer called ***");
 	}
 }
