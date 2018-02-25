@@ -13,7 +13,7 @@ import mormontrail.view.MainMenuView;
  */
 public class HelpMenuView {
 
-	public boolean displayHelpMenuView() {
+	public boolean helpMenuView() {
 		System.out.println("\n HELP MENU"
 			 + "\n G - Game Objective"
 			 + "\n M - How to move"

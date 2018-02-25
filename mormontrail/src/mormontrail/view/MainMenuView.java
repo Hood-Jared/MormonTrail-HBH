@@ -35,7 +35,7 @@ public class MainMenuView {
         boolean isValidName = false;
         String name = "";
    
-        System.out.println("Please enter your name: ");
+        //System.out.println("Please enter your name: ");
         
         while(!isValidName){
   
@@ -71,6 +71,7 @@ public boolean mainMenuView() {
                      + "\nH - Go to Help Menu"
                      + "\nE - Exit"
                      + "\n");
+		
 		return true;
     }
 
@@ -96,7 +97,7 @@ public boolean mainMenuView() {
                 System.out.println("Invalid Input - Please try again.");
                 break;
         }
-        return false;
+        return true;
     }
 
     public void startNewGame(Player player) {
@@ -114,8 +115,8 @@ public boolean mainMenuView() {
     }
 
     public void getMenu() {
-        HelpMenuView display = new HelpMenuView();
-        display.displayHelpMenuView();
+        HelpMenuView helpMenuView = new HelpMenuView();
+		helpMenuView.helpMenuView();
     }
     
 }
