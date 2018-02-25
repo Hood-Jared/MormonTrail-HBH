@@ -4,100 +4,125 @@
  * and open the template in the editor.
  */
 package mormontrail.view;
+import java.util.Scanner;
+import mormontrail.controller.GameController;
+import mormontrail.view.StartProgramView;
+import mormontrail.model.Player;
 
-/**
- *
- * @author heatherholt, Jared
- */
+
 public class MainMenuView {
 
-	// Heather's
+    // Heather's
 	void displayMainMenuView() {
 		System.out.println("*** displayMainMenuView called ***");
 	}
 	// End of Heather's
+   
+            
+	private boolean displayWelcome() {
+		System.out.println  ("\n       WELCOME TO THE MORMON TRAIL         *"
+                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
+                +"\n*                                          *"
+                +"\n*          Get your family ready!          *"
+                +"\n*     You're about to embark on a great    *"
+                +"\n*       Adventure from start to finish.    *"
+                +"\n*  Follow the trail and get thru dangers   *"
+                +"\n*        Watch out for Deep Rivers!        *"
+                +"\n*      Make sure you have enough food!     *"
+                +"\n*  Make sure to rest enough along the way  *"
+                +"\n*      and Enjoy life in the valley!       *"
+                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
+		return true;
+    }
+    
+    private String getPlayerName(String args[]){
+        
+        boolean isValidName = false;
+        String name = "";
+   
+        System.out.println("Please enter your name: ");
+        
+        while(!isValidName){
+  
+            Scanner input = new Scanner(System.in);
+            
+            if (input != null ){
+                isValidName = true;
+                
+                
+            } else {
+                System.out.println("Input is invalid - name must be at least 2 characters");
+            }         
+        }
+        return name;
+    }   
+    
+    private void displayWelcome(String playerName){
+        System.out.println("============================");
+        System.out.println("Welcome " + playerName + ".");
+        System.out.println("Enjoy the game!");
+        System.out.println("============================");
+    }
 
-}
+
+
+	
+
+
 public MainMenuView() {
-        System.println("\nMAIN MENU"
+        System.out.println("\nMAIN MENU"
                      + "\nN - Start New Game"
-                     + "\nS - Save Game"
-                     + "\nL - Start Saved Game"
-                     + "\nH - Help Menu"
-                     + "\nQ - Quit"
+                     + "\nR - Restart Saved Game"
+                     + "\nH - Go to Help Menu"
+                     + "\nE - Exit"
                      + "\n");
     }
 
 
 
-    public boolean doAction(String selection) {
+    public boolean doAction(String selection, Player player) {
 
         char charSel = selection.charAt(0);
 
         switch (charSel) {
             case 'N':
-                this.startNewGame();
+                this.startNewGame(player);
                 break;
-            case 'S':
-                this.saveGame();
-                break;
-            case 'L':
-                this.startSavedGame();
+            case 'R':
+                restartGame();
                 break;
             case 'H':
-                this.helpMenu();
+                getMenu();
                 break;
-            case 'Q':
+            case 'E':
                 return true;
             default:
-                System.println("Invalid Input - Please try again.");
+                System.out.println("Invalid Input - Please try again.");
                 break;
         }
         return false;
     }
 
-    private void startNewGame() {
-        try {
-            GameControl gc = new GameControl();
-            gc.createNewGame(Mormontrail.getPlayer());
-            GameMenuView gameMenu = new GameMenuView();
-            gameMenu.display();
-        } 
+    public void startNewGame(Player player) {
+        
+            GameController.createNewGame(GameController.getPlayer());
+            GameController.display();
+         
     }
     
-    private void saveGame() {
-        this.System.println("\n\nEnter the file path for the file where the game"
-                + " is to be saved.");
-        
-        String filePath = this.getInput();
-        
-        try {
-            // save the game to the specified file
-            GameControl.saveGame(Mormontrail.getCurrentGame(), filePath);
-        } 
-    }
 
-    private void startSavedGame() {
+    public void restartGame() {
         
-        this.console.println("\n\nEnter the file path for the file where the game"
-                + " was saved.");
-        
-        String filePath = this.getInput();
-
-        try {
-            // start a saved game
-            GameControl.getSavedGame(filePath);    
-        } 
-
-        
-        GameMenuView gameMenu = new GameMenuView();
+             StartExistingGameView gameMenu = new StartExistingGameView();
         gameMenu.display();
     }
 
-    private void helpMenu() {
-        System.println("HELP MENU CALLED");
+    public void getMenu() {
         HelpMenuView display = new HelpMenuView();
         display.display();
     }
+    
 }
+   
+  
 

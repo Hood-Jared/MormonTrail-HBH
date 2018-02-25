@@ -12,7 +12,7 @@ import mormontrail.model.Player;
  *
  * @author Chaskiel, Jared, Heather
  */
-public class StartProgramView {
+public static class StartProgramView {
     
     
     public String getInputs(){
@@ -73,7 +73,7 @@ RETURN inputs
    
       } 
     
-        
+ 
         
     System.out.println("getInput (called");
     
