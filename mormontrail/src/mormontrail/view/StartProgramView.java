@@ -12,7 +12,7 @@ import mormontrail.model.Player;
  *
  * @author Chaskiel, Jared, Heather
  */
-public static class StartProgramView {
+public class StartProgramView {
     
     
     public String getInputs(){

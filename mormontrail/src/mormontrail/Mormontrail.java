@@ -43,7 +43,10 @@ public class Mormontrail {
        StartProgramView startProgramView = new StartProgramView();
        startProgramView.display();
        
+	  
        
     }
-    
+	
+    public static void setName() {
+	}
 }
