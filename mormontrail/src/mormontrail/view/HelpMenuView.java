@@ -6,6 +6,7 @@
 package mormontrail.view;
 
 
+import java.util.Scanner;
 import mormontrail.view.MainMenuView;
 /**
  *
@@ -23,13 +24,23 @@ public class HelpMenuView {
 		return true;
 	}
 	
+	public String getHelpMenuInput() {
+
+	System.out.println("Choose an option from the menu:");
+
+	Scanner menuInput = new Scanner(System.in);
+	String selection = menuInput.nextLine();
+
+	return selection;
+	}
+	
 	public boolean doAction(String selection) {
 
         char charSel = selection.charAt(0);
 
         switch (charSel) {
             case 'G':
-                System.out.println  ("\n       WELCOME TO THE MORMON TRAIL         *"
+                System.out.println  ("\n*       WELCOME TO THE MORMON TRAIL        *"
 					+"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
 					+"\n*                                          *"
 					+"\n*          Get your family ready!          *"

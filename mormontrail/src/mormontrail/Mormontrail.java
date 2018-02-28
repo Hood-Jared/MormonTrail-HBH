@@ -47,7 +47,7 @@ public class Mormontrail {
 */
        
        StartProgramView startProgramView = new StartProgramView();
-       startProgramView.display();
+       startProgramView.display(player);
        
 	  
        

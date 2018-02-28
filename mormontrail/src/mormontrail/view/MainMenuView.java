@@ -15,7 +15,7 @@ public class MainMenuView {
    
             
 	private boolean displayWelcome() {
-		System.out.println  ("\n       WELCOME TO THE MORMON TRAIL         *"
+		System.out.println  ("\n*       WELCOME TO THE MORMON TRAIL        *"
                 +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
                 +"\n*                                          *"
                 +"\n*          Get your family ready!          *"
@@ -78,8 +78,10 @@ public boolean mainMenuView() {
 
 
     public boolean doAction(String selection, Player player) {
+			
 
         char charSel = selection.charAt(0);
+		
 
         switch (charSel) {
             case 'N':
@@ -89,7 +91,7 @@ public boolean mainMenuView() {
                 restartGame();
                 break;
             case 'H':
-                getMenu();
+				getMenu();
                 break;
             case 'E':
                 return true;
@@ -97,7 +99,7 @@ public boolean mainMenuView() {
                 System.out.println("Invalid Input - Please try again.");
                 break;
         }
-        return true;
+        return false;
     }
 
     public void startNewGame(Player player) {
@@ -115,10 +117,18 @@ public boolean mainMenuView() {
     }
 
     public void getMenu() {
-        HelpMenuView helpMenuView = new HelpMenuView();
-		helpMenuView.helpMenuView();
+        //System.out.println("I'm Here");
+		boolean end = false;
+		while (!end) {
+			HelpMenuView helpMenuView = new HelpMenuView();
+			//System.out.println("Test1");
+			helpMenuView.helpMenuView();
+			//System.out.println("Test2");
+			end = helpMenuView.doAction(helpMenuView.getHelpMenuInput());
+			//System.out.println("Test3");
+			//System.out.println(end);
+		}		
     }
-    
 }
    
   

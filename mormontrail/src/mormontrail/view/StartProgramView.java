@@ -45,7 +45,7 @@ RETURN inputs
     
      String inputs = new String();
     
-        System.out.println("this is the discription of the view");
+        System.out.println("this is the description of the view");
        
         boolean valid = false; 
        
@@ -87,7 +87,7 @@ RETURN inputs
 	
 	//Start of code by Heather
 	
-    private boolean doAction(String input){
+    private boolean doAction(String input/*, Player player*/) {
     
 		/* doAction(inputs): boolean {
 			playersName = get the first value in the inputs array
@@ -106,20 +106,28 @@ RETURN inputs
 			RETURN true
 		} */
 		playersName = input;
-		Player player = GameController.savePlayer(playersName); 
+		//player.setName(input);
+		Player player= GameController.savePlayer(playersName); 
 		if (player == null) {
 			System.out.println("Could not create the player. Enter a different name.");
 			return false;
 		}		
 		System.out.println("** Welcome to the game " + playersName +"! **");
-		MainMenuView mainMenuView = new MainMenuView();
-		mainMenuView.mainMenuView();
+		
 		return true;
     }
 	
-	// End of Heather's code
+	public String getMenuInput() {
+		
+		System.out.println("Choose an option from the menu:");
+
+		Scanner menuInput = new Scanner(System.in);
+		String selection = menuInput.nextLine();
+
+		return selection;
+		}
             
-    public void display() {
+    public void display(Player player) {
     /*    endOfView = false
     DO
            inputs = getInputs()
@@ -132,17 +140,23 @@ RETURN inputs
           */
     boolean endOfView = false;
     
-    do {
-        String input = getInputs();
-            if (input.equals("") || input.equals("Q")){
+	String input = getInputs();
+            if (input.equals("") || input.equals("Q"))
+			{
                     return; 
-                  
-        }
-    endOfView = doAction(input);
-    
-    
+            }
+	doAction(input/*, player*/);
+	
+    do {
+        MainMenuView mainMenuView = new MainMenuView();
+		mainMenuView.mainMenuView();
+		//System.out.println("Menu Here");
+		endOfView = mainMenuView.doAction(getMenuInput(), player);
+		//System.out.println("Menu Here 2");
     }
     while (endOfView != true);
+	
+	
         
     }
 
