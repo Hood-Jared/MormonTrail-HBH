@@ -79,10 +79,12 @@ public boolean GeneralStoreMenu(){
                 
             else {
                 System.out.println("Input is invalid - Please choose at least 100 lbs");
-            }   
+            }  
+         
+    return -1;
              
                   
-        }
+    }       
        
         
     
