@@ -45,7 +45,7 @@ RETURN inputs
     
      String inputs = new String();
     
-        System.out.println("this is the description of the view");
+        System.out.println("The Game is Starting!");
        
         boolean valid = false; 
        
@@ -54,7 +54,7 @@ RETURN inputs
         
       
         
-          System.out.println("enter your name");
+          System.out.println("Please Enter your Name");
           
           Scanner input = new Scanner(System.in);
           String name = input.nextLine();
@@ -63,7 +63,7 @@ RETURN inputs
           int length = trim.length ();
           
           if (length < 1){
-                 System.out.println("re enter a name with more than one letter");
+                 System.out.println("re-enter a name with more than one letter");
                  
           }
           else{
