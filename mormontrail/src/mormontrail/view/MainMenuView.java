@@ -117,16 +117,11 @@ public boolean mainMenuView() {
     }
 
     public void getMenu() {
-        //System.out.println("I'm Here");
 		boolean end = false;
 		while (!end) {
 			HelpMenuView helpMenuView = new HelpMenuView();
-			//System.out.println("Test1");
 			helpMenuView.helpMenuView();
-			//System.out.println("Test2");
 			end = helpMenuView.doAction(helpMenuView.getHelpMenuInput());
-			//System.out.println("Test3");
-			//System.out.println(end);
 		}		
     }
 }

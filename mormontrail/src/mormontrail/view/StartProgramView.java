@@ -87,26 +87,8 @@ RETURN inputs
 	
 	//Start of code by Heather
 	
-    private boolean doAction(String input/*, Player player*/) {
-    
-		/* doAction(inputs): boolean {
-			playersName = get the first value in the inputs array
-			player = savePlayer(playersName)
-			IF player == null
-			display “Could not create the player. “ +
-			“Enter a different name.”
-			RETURN false
-			ENDIF
-			DISPLAY "================================================= "
-			+ "Welcome to the game " + playersName
-			+ "We hope you have a lot of fun!”
-			+ "================================================= "
-			mainMenuView = Create a new MainMenuView object
-			mainMenuView.displayMainMenuView()
-			RETURN true
-		} */
+    private boolean doAction(String input) {
 		playersName = input;
-		//player.setName(input);
 		Player player= GameController.savePlayer(playersName); 
 		if (player == null) {
 			System.out.println("Could not create the player. Enter a different name.");
