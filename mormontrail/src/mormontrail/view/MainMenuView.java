@@ -10,7 +10,7 @@ import mormontrail.view.StartProgramView;
 import mormontrail.model.Player;
 
 
-public class MainMenuView {
+public class MainMenuView  extends View {
 
    
             
@@ -91,7 +91,7 @@ public boolean mainMenuView() {
                 restartGame();
                 break;
             case 'H':
-				getMenu();
+		getMenu();
                 break;
             case 'E':
                 return true;
@@ -123,6 +123,11 @@ public boolean mainMenuView() {
 			helpMenuView.helpMenuView();
 			end = helpMenuView.doAction(helpMenuView.getHelpMenuInput());
 		}		
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
    
