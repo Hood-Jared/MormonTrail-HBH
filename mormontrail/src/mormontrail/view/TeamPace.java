@@ -38,7 +38,7 @@ private String getMenuOption() {
 } 
 private boolean doAction(char menuOption){
    
-     String distance;
+    String distance;
     int teleNum;
     String inputTeleNum;
     String yes = "YES";
