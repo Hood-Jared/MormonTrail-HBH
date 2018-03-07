@@ -3,71 +3,93 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package mormontrail.view;
 import java.util.Scanner;
+import mormontrail.controller.GameController;
+import mormontrail.view.StartProgramView;
+import mormontrail.model.Player;
 
-/**
- *
- * @author Chaskiel
- */
-public class RiverCrossing {
+
+
+
+class RiverCrossingView{
     
     
-    public static void main (String[] args){
+public void displayMainMenuView(){
+    boolean done = false;
+    do{
+        String menuOption= this.getMenuOption();
+        if (menuOption.toUpperCase().equals("Q"))
+            return;
         
+        done=this.doAction(menuOption);
         
-       Scanner in = new Scanner(System.in);
-       System.out.print("Enter a decsision ");  
-       
-       int descsion; 
-       
-     descsion = in.nextInt();
-       
-        
-       
-        
-            switch (descsion){
-            case 1: System.out.println("go around "); 
+    }while (!done);
+    
+                
+}
+
+
+private String getMenuOption() {
+    System.out.println( "n***** get menu option() function called *****");
+    return "N";
+    
+} 
+private boolean doAction(char menuOption){
+   
+    switch (menuOption){
+            case 'A': System.out.println("go around "); 
+               goAround(); 
+               break;
+
+             case 'B': System.out.println("Find a path "); 
+                findPath();
                 break;
-             case 2: System.out.println("Find a path "); 
+                
+
+             case 'C': System.out.println("Take a ferry "); 
+                payFerry();
                 break;
-             case 3: System.out.println("Take a ferry "); 
+
+              default:
+                System.out.println("Enter a diffrent output.");
                 break;
-              
+    }    
+    return false;
+    
+    
+}
+public String getInput(){
+Scanner keyboard = new Scanner(System.in);
+boolean valid = false;
+String selection = null;
+
+while (!valid){
+    
+    selection = keyboard.nextLine();
+    selection = selection.trim();
+    
+    if (selection.length() <1){
+        System.out.println("invalid slection ***try again");
+        continue;
     }
-            
+    break;
+}
+return selection;
+}
+private void payFerry(){
+ 
     
-          int size = 0;
-        boolean kicker = false;
-        
-        while (kicker == false)
-        {
-            System.out.print("Enter if you will be going on ferry: ");
+}
+private void findPath(){
+    
+}
+private void goAround(){
+    
+}
 
-            Scanner input = new Scanner(System.in);
-            String decision;
-
-            decision = input.nextLine();
-
-            System.out.println("You will be going on ferry ");
-
-            size = decision.length();
-
-           
-            
-            if (size == 2)
-            {
-                kicker = true;
-            }
-        }
-        System.out.println("Find another around!");    
-            
-            
-            
-        }
-
-
-            }
-
-
-     
+    private boolean doAction(String menuOption) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+ }
