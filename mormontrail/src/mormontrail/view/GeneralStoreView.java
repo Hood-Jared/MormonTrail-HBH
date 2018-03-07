@@ -17,7 +17,6 @@ import mormontrail.model.Player;
 
 public class GeneralStoreView { 
 
-
 public boolean GeneralStoreMenu(){
  
    
