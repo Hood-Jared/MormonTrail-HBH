@@ -13,9 +13,32 @@ import mormontrail.model.Player;
 
 
 
-class TeamPaceView{
+class TeamPaceView extends View{
     
     
+    
+    public TeamPaceView(){
+               super( "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
+                +"\n*                                          *"
+                +"\n*              You must decide             *"
+                +"\n*           How far you want to travel     *"
+                +"\n*  a long distance requires alot of rest   *"
+                +"\n*     But wait too long and you could      *"
+                +"\n*      never make it to your destination   *"
+                +"\n*             Enter distance:              *"
+                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
+    
+               
+                }
+@Override 
+public boolean doAction(String value) {
+    value = value.toUpperCase();
+                    return false;
+                   
+                    
+}
+    
+/*
 public void displayMainMenuView(){
     boolean done = false;
     do{
@@ -36,6 +59,7 @@ private String getMenuOption() {
     return "N";
     
 } 
+*/
 private boolean doAction(char menuOption){
    
     String distance;
@@ -64,6 +88,7 @@ private boolean doAction(char menuOption){
     
     }
 }
+/*
 public String getInput(){
 Scanner keyboard = new Scanner(System.in);
 boolean valid = false;
@@ -86,5 +111,5 @@ return selection;
     private boolean doAction(String menuOption) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+*/
  }
