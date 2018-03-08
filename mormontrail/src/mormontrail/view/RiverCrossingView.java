@@ -13,10 +13,34 @@ import mormontrail.model.Player;
 
 
 
-class RiverCrossingView{
+public class RiverCrossingView extends View{
+        
+        
+        	public RiverCrossingView(){
+               super( "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
+                +"\n*                                          *"
+                +"\n*   You have come accross a huge river     *"
+                +"\n* You must decide wheither to go accross   *"
+                +"\n*        or find another way around        *"
+                +"\n*      Going accross can save you time     *"
+                +"\n*       or it can be a huge mistake        *"
+                +"\n*           Chose your fate                *"
+                +"\n*             A: Go around                  *"
+                +"\n*             B: Find a path               *"
+                +"\n*             C: Pay Ferry                 *"
+                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
     
-    
-public void displayMainMenuView(){
+               
+                }
+@Override 
+public boolean doAction(String value) {
+    value = value.toUpperCase();
+                    return false;
+                   
+                    
+}
+                
+/*public void displayMainMenuView (){
     boolean done = false;
     do{
         String menuOption= this.getMenuOption();
@@ -77,19 +101,13 @@ while (!valid){
     break;
 }
 return selection;
-}
-private void payFerry(){
- 
+*/
+
     
-}
-private void findPath(){
-    
-}
-private void goAround(){
-    
+
+
+
+  
 }
 
-    private boolean doAction(String menuOption) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
- }
+ 
