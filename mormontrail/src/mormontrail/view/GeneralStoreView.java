@@ -1,5 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change = this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -15,31 +15,26 @@ import mormontrail.model.Player;
  * @author jared
  */
 
-public class GeneralStoreView { 
+public class GeneralStoreView extends View{ 
 
-public boolean GeneralStoreMenu(){
+public GeneralStoreView(){
  
-   
-        System.out.println("\nWelcome to the General Store"
-                     + "\nF - Purchase Food "
-                     + "\nA - Purchase 50 rounds of Ammo"
-                     + "\nW - Purchase Wagon Wheel"
-                     + "\nE - Exit"
-                     + "\n");
-		
-		return true;
-    
-}
-
-
-  public boolean doAction(String selection, Inventory inventory) {
+            super("\n"
+                + "Welcome to the General Store"
+                + "\nF - Purchase Food "
+                + "\nA - Purchase 50 rounds of Ammo"
+                + "\nW - Purchase Wagon Wheel"
+                + "\nE - Exit"
+                 + "\n");
 			
+}
+  public boolean doAction(String selection) {
+    
 
         char charSel = selection.charAt(0);
 		
-
         switch (charSel) {
-            case 'F':
+           case 'F':
                 this.addInventoryFood();
                 break;
             case 'A':
@@ -84,7 +79,7 @@ public boolean GeneralStoreMenu(){
              
                   
     }       
-       
+    
         
     
 
@@ -96,9 +91,5 @@ public boolean GeneralStoreMenu(){
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 
-    private static class Inventory {
+ }
 
-        public Inventory() {
-        }
-    }
-}

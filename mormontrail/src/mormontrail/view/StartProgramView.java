@@ -9,10 +9,10 @@ import mormontrail.controller.GameController;
 import mormontrail.model.Player;
 
 /**
- *
+ * Jared Note *  GeneralStoreView, InventoryView, StartProgramView - Team Assignment.
  * @author Chaskiel, Jared, Heather
  */
-public class StartProgramView {
+public class StartProgramView extends View{
     
     
     public String getInputs(){
@@ -86,8 +86,8 @@ RETURN inputs
     public String playersName;
 	
 	//Start of code by Heather
-	
-    private boolean doAction(String input) {
+@Override	
+    public boolean doAction(String input) {
 		playersName = input;
 		Player player= GameController.savePlayer(playersName); 
 		if (player == null) {
