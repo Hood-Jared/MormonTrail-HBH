@@ -10,12 +10,19 @@ import mormontrail.view.StartProgramView;
 import mormontrail.model.Player;
 
 
-public class MainMenuView  extends View {
+public class MainMenuView extends View {
 
-   
+   public MainMenuView() {
+	   super("\nMAIN MENU"
+                     + "\nN - Start New Game"
+                     + "\nR - Restart Saved Game"
+                     + "\nH - Go to Help Menu"
+                     + "\nQ - Quit"
+                     + "\n");
+   }
             
-	private boolean displayWelcome() {
-		System.out.println  ("\n*       WELCOME TO THE MORMON TRAIL        *"
+	/* private boolean displayWelcome() {
+		System.out.println  ( "\n*       WELCOME TO THE MORMON TRAIL        *"
                 +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
                 +"\n*                                          *"
                 +"\n*          Get your family ready!          *"
@@ -26,11 +33,11 @@ public class MainMenuView  extends View {
                 +"\n*      Make sure you have enough food!     *"
                 +"\n*  Make sure to rest enough along the way  *"
                 +"\n*      and Enjoy life in the valley!       *"
-                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
+                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*" );
 		return true;
-    }
+    } */
     
-    private String getPlayerName(String args[]){
+    /* private String getPlayerName(String args[]){
         
         boolean isValidName = false;
         String name = "";
@@ -50,21 +57,21 @@ public class MainMenuView  extends View {
             }         
         }
         return name;
-    }   
+    } */  
     
-    private void displayWelcome(String playerName){
+    /* private void displayWelcome(String playerName){
         System.out.println("============================");
         System.out.println("Welcome " + playerName + ".");
         System.out.println("Enjoy the game!");
         System.out.println("============================");
-    }
+    } */
 
 
 
 	
 
 
-public boolean mainMenuView() {
+/* public boolean mainMenuView() {
         System.out.println("\nMAIN MENU"
                      + "\nN - Start New Game"
                      + "\nR - Restart Saved Game"
@@ -73,27 +80,28 @@ public boolean mainMenuView() {
                      + "\n");
 		
 		return true;
-    }
+    } */
 
 
+    @Override
+    public boolean doAction(String value/*, Player player*/) {
+		
+		value = value.toUpperCase();
 
-    public boolean doAction(String selection, Player player) {
-			
-
-        char charSel = selection.charAt(0);
+        char charSel = value.charAt(0);
 		
 
         switch (charSel) {
             case 'N':
-                this.startNewGame(player);
+                /*this.startNewGame(player);*/
                 break;
             case 'R':
-                restartGame();
+                /*restartGame();*/
                 break;
             case 'H':
-		getMenu();
+				getMenu();
                 break;
-            case 'E':
+            case 'Q':
                 return true;
             default:
                 System.out.println("Invalid Input - Please try again.");
@@ -102,19 +110,19 @@ public boolean mainMenuView() {
         return false;
     }
 
-    public void startNewGame(Player player) {
+    /* public void startNewGame(Player player) {
         
             GameController.createNewGame(GameController.getPlayer());
             GameController.display();
          
-    }
+    }*/
     
 
-    public void restartGame() {
+    /* public void restartGame() {
         
              StartExistingGameView gameMenu = new StartExistingGameView();
         gameMenu.display();
-    }
+    }*/
 
     public void getMenu() {
 		boolean end = false;
@@ -125,10 +133,10 @@ public boolean mainMenuView() {
 		}		
     }
 
-    @Override
+    /* @Override
     public boolean doAction(String value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 }
    
   

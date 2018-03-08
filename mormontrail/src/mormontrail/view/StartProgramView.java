@@ -131,9 +131,9 @@ RETURN inputs
 	
     do {
         MainMenuView mainMenuView = new MainMenuView();
-		mainMenuView.mainMenuView();
+		mainMenuView.display();
 		//System.out.println("Menu Here");
-		endOfView = mainMenuView.doAction(getMenuInput(), player);
+		endOfView = mainMenuView.doAction(getInput()/*, player*/);
 		//System.out.println("Menu Here 2");
     }
     while (endOfView != true);
