@@ -20,7 +20,11 @@ public class HelpMenuView extends View {
 			 + "\n M - How to move"
 			 + "\n T - Tips"
 			 + "\n Q - Quit to previous menu"
-			 + "\n");
+                         + "\n R - Resting view"
+                         + "\n C - River Crossing View"
+                         + "\n P - Team Pace"
+                         + "\n S - Start exsisting"
+			 + "\n"); 
 	}
 	
 	/* public String getHelpMenuInput() {
@@ -78,6 +82,26 @@ public class HelpMenuView extends View {
                 break;
             case 'Q':
                 return true;
+                
+                case 'R': 
+                   RestingView restingView = new RestingView();
+                   restingView.display();
+                   break;
+                case 'C':
+                    RiverCrossingView riverCrossingView = new RiverCrossingView();
+                    riverCrossingView.display();
+                    break;
+                case 'P':
+                    TeamPaceView teamPaceView = new TeamPaceView();
+                    teamPaceView.display();
+                    break;
+                case 'S':
+                    StartExistingGameView startExistingGameView = new StartExistingGameView();
+                    startExistingGameView.display();
+                    break;
+                
+                
+                
             default:
                 System.out.println("Invalid Input - Please try again.");
                 break;

@@ -32,13 +32,10 @@ public class RiverCrossingView extends View{
     
                
                 }
-@Override 
-public boolean doAction(String value) {
-    value = value.toUpperCase();
-                    return false;
+
                    
                     
-}
+
                 
 /*public void displayMainMenuView (){
     boolean done = false;
@@ -61,19 +58,19 @@ private String getMenuOption() {
     
 } 
 */
-private boolean doAction(char menuOption){
+public boolean doAction(String value){
    
-    switch (menuOption){
-            case 'A': System.out.println("go around "); 
+    switch (value){
+            case "A": System.out.println("go around "); 
                goAround(); 
                break;
 
-             case 'B': System.out.println("Find a path "); 
+             case "B": System.out.println("Find a path "); 
                 findPath();
                 break;
                 
 
-             case 'C': System.out.println("Take a ferry "); 
+             case "C": System.out.println("Take a ferry "); 
                 payFerry();
                 break;
 
@@ -112,15 +109,15 @@ return selection;
 }
 
     private void goAround() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       System.out.println("It works");
     }
 
     private void findPath() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       System.out.println("It works");
     }
 
     private void payFerry() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("It works");
     }
 
 }

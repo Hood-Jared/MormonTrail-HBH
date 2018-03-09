@@ -6,44 +6,35 @@
 
 
 package mormontrail.view;
+import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 /**
  *
  * @author Chaskiel
  */
-public class RestingView {
+public class RestingView  extends View{
     
-    int miles;
-    String resting; 
     
-    Scanner userInput = new Scanner(System.in);
     
-public void displayRestingView() {
-    boolean endOfView = false;
+    public RestingView(){
+               super( "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
+                +"\n*                                          *"
+                +"\n*   Choose how far you want to travel       *"
+                +"\n* Traveling a long distance can be tireing  *"
+                +"\n*        and can affect how far you go      *"
+                +"\n*      Enter the distance you want to go    *"
+                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
     
-    do {
-        int input = getInput();
-        
-      if(input>20) 
-         return;
+               
+                }
+    
+     @Override
+   public boolean doAction(String value ){
+     
+       int distance = parseInt(value);
       
-       endOfView = this.doAction(input);
-    }while (!endOfView);
-   
-}  
-private int getInput(){
- System.out.print("Enter distance: ");
- 
- int distance;
- Scanner input = new Scanner(System.in);
- distance = input.nextInt();
- 
-    return distance;
-}
- 
-   private boolean doAction(int input){
-      int hoursToRest;
-     hoursToRest = input*24/20; 
+       int hoursToRest;
+     hoursToRest = distance*24/20; 
      System.out.println("You must rest " + hoursToRest +" hours");
       
        return true; 
