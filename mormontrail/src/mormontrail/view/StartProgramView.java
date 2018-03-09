@@ -62,7 +62,7 @@ RETURN inputs
           
           int length = trim.length ();
           
-          if (length < 1){
+          if (length <= 1){
                  System.out.println("re-enter a name with more than one letter");
                  
           }
@@ -85,7 +85,7 @@ RETURN inputs
    
     public String playersName;
 	
-	//Start of code by Heather
+	
 @Override	
     public boolean doAction(String input) {
 		playersName = input;
