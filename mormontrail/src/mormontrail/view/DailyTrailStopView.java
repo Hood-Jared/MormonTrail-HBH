@@ -13,11 +13,12 @@ public class DailyTrailStopView extends View {
 	
 	public DailyTrailStopView() {
 	super ("\n"
-			+ "\n------------------------------"
-			+ "\n   This is the Hunting View   "
-			+ "\n   Press Q to return to the   "
-			+ "\n         previous view        "
-			+ "\n------------------------------");
+			+ "\n----------------------------------------"
+			+ "\n    This is the Daily Trail Stop View   "
+			+ "\n     Press H to see the Hunting View    "
+			+ "\n         Press Q to return to the       "
+			+ "\n               previous view            "
+			+ "\n----------------------------------------");
 }
 
 	@Override
@@ -26,6 +27,9 @@ public class DailyTrailStopView extends View {
 		char charSel = value.charAt(0);
 
 		switch (charSel) {
+			case 'H':
+				getMenu();
+				break;
 			case 'Q':
 				return true;
 			default:
@@ -34,4 +38,13 @@ public class DailyTrailStopView extends View {
 		}
 		return false;
 		}
+	
+	public void getMenu() {
+		boolean end = false;
+		while (!end) {
+			HuntingView huntingView = new HuntingView();
+			huntingView.display();
+			end = huntingView.doAction(getInput());
+		}		
+    }
 }
