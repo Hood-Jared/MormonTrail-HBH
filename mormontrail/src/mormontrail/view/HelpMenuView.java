@@ -12,19 +12,18 @@ import mormontrail.view.MainMenuView;
  *
  * @author heatherholt
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
 
-	public boolean helpMenuView() {
-		System.out.println("\n HELP MENU"
+	public HelpMenuView() {
+		super("\n HELP MENU"
 			 + "\n G - Game Objective"
 			 + "\n M - How to move"
 			 + "\n T - Tips"
 			 + "\n R - Return to previous menu"
 			 + "\n");
-		return true;
 	}
 	
-	public String getHelpMenuInput() {
+	/* public String getHelpMenuInput() {
 
 	System.out.println("Choose an option from the menu:");
 
@@ -32,11 +31,14 @@ public class HelpMenuView {
 	String selection = menuInput.nextLine();
 
 	return selection;
-	}
+	} */
 	
-	public boolean doAction(String selection) {
+	@Override
+	public boolean doAction(String value) {
+		
+		value = value.toUpperCase();
 
-        char charSel = selection.charAt(0);
+        char charSel = value.charAt(0);
 
         switch (charSel) {
             case 'G':

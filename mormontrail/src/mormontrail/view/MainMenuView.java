@@ -128,8 +128,8 @@ public class MainMenuView extends View {
 		boolean end = false;
 		while (!end) {
 			HelpMenuView helpMenuView = new HelpMenuView();
-			helpMenuView.helpMenuView();
-			end = helpMenuView.doAction(helpMenuView.getHelpMenuInput());
+			helpMenuView.display();
+			end = helpMenuView.doAction(getInput());
 		}		
     }
 
