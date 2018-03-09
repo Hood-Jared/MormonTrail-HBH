@@ -60,7 +60,7 @@ private String getMenuOption() {
     return "N";
     
 } 
-
+*/
 private boolean doAction(char menuOption){
    
     switch (menuOption){
@@ -83,7 +83,7 @@ private boolean doAction(char menuOption){
     }    
     return false;
     
-    
+  /*  
 }
 public String getInput(){
 Scanner keyboard = new Scanner(System.in);
@@ -111,4 +111,16 @@ return selection;
   
 }
 
- 
+    private void goAround() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void findPath() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void payFerry() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+}
