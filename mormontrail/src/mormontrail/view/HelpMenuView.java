@@ -19,7 +19,7 @@ public class HelpMenuView extends View {
 			 + "\n G - Game Objective"
 			 + "\n M - How to move"
 			 + "\n T - Tips"
-			 + "\n R - Return to previous menu"
+			 + "\n Q - Quit to previous menu"
 			 + "\n");
 	}
 	
@@ -76,7 +76,7 @@ public class HelpMenuView extends View {
 					+"\n*                                          *"
 					+"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
                 break;
-            case 'R':
+            case 'Q':
                 return true;
             default:
                 System.out.println("Invalid Input - Please try again.");

@@ -14,6 +14,7 @@ public class MainMenuView extends View {
 
    public MainMenuView() {
 	   super("\nMAIN MENU"
+			   + "\n I'm here now"
                      + "\nN - Start New Game"
                      + "\nR - Restart Saved Game"
                      + "\nH - Go to Help Menu"
@@ -125,12 +126,15 @@ public class MainMenuView extends View {
     }*/
 
     public void getMenu() {
-		boolean end = false;
+		HelpMenuView helpMenuView = new HelpMenuView();
+		helpMenuView.display();
+		
+		/* boolean end = false;
 		while (!end) {
 			HelpMenuView helpMenuView = new HelpMenuView();
 			helpMenuView.display();
 			end = helpMenuView.doAction(getInput());
-		}		
+		}	*/	
     }
 
     /* @Override

@@ -129,14 +129,17 @@ RETURN inputs
             }
 	doAction(input/*, player*/);
 	
-    do {
+	MainMenuView mainMenuView = new MainMenuView();
+	mainMenuView.display();
+    
+	/* do {
         MainMenuView mainMenuView = new MainMenuView();
 		mainMenuView.display();
-		//System.out.println("Menu Here");
-		endOfView = mainMenuView.doAction(getInput()/*, player*/);
-		//System.out.println("Menu Here 2");
+		System.out.println("Menu Here");
+		endOfView = mainMenuView.doAction(getInput(), player);
+		System.out.println("Menu Here 2");
     }
-    while (endOfView != true);
+    while (endOfView != true);*/
 	
 	
         
