@@ -11,15 +11,31 @@ import mormontrail.model.Player;
  *
  * @author jared
  */
-public class StartExistingGameView {
+public class StartExistingGameView extends View {
     
-    public static void displayStartExistingGameView() {
-		System.out.println("*** Start Existing Game()called ***");
     
+    public StartExistingGameView(){
+               super( "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
+                +"\n*                                          *"
+                +"\n*          Welcome to mormontrail          *"
+                +"\n* a game of excitment and many decsisions  *"
+                +"\n*        travel accross the country        *"
+                +"\n*      to get to your destination          *"
+                +"\n*       There are many challenges          *"
+                +"\n*                Good Luck                 *"
+                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
+    
+               
+                }
+@Override 
+public boolean doAction(String value) {
+    value = value.toUpperCase();
+                    return false;
+                   
+                    
 }
-
-    void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    
     }
     
-}
+
