@@ -104,7 +104,7 @@ public class MainMenuView extends View {
                 getGameMenu();
                 break;   
             case 'H':
-		getMenu();
+				getMenu();
                 break;
             case 'Q':
                 return true;

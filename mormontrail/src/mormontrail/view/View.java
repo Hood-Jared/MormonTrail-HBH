@@ -28,11 +28,13 @@ public View(String message) {
 public void display() {
     
     boolean done = false;
+	String value;
     do {
-        String value = this.getInput();
+        value = this.getInput();
         if (value.toUpperCase().equals("Q"))
             return;
         done = this.doAction(value);
+		value = null;
         
     } while (!done);
 }

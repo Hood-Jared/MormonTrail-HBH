@@ -103,7 +103,7 @@ public class HelpMenuView extends View {
                 
                 
             default:
-                System.out.println("Invalid Input - Please try again.");
+                System.out.println("Invalid Input! - Please try again.");
                 break;
         }
         return false;

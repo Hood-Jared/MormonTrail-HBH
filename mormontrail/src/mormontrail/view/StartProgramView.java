@@ -99,7 +99,7 @@ RETURN inputs
 		return true;
     }
 	
-	public String getMenuInput() {
+	/*public String getMenuInput() {
 		
 		System.out.println("Choose an option from the menu:");
 
@@ -107,7 +107,7 @@ RETURN inputs
 		String selection = menuInput.nextLine();
 
 		return selection;
-		}
+		}*/
             
     public void display(Player player) {
     /*    endOfView = false
