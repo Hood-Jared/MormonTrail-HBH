@@ -28,7 +28,7 @@ public boolean doAction(String selection) {
 		
         switch (charSel) {
             case 'E':
-                this.endGame();
+                this.endGame();                      
                 break;
             case 'R':
                 return true;

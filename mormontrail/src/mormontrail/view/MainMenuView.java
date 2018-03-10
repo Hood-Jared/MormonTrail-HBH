@@ -16,6 +16,7 @@ public class MainMenuView extends View {
 	   super("\nMAIN MENU"
 			   + "\n I'm here now"
                      + "\nN - Start New Game"
+                     + "\nG - Go to General Store"
                      + "\nR - Restart Saved Game"
                      + "\nH - Go to Help Menu"
                      + "\nQ - Quit"
@@ -99,8 +100,11 @@ public class MainMenuView extends View {
             case 'R':
                 /*restartGame();*/
                 break;
+            case 'G':
+                getGameMenu();
+                break;   
             case 'H':
-				getMenu();
+		getMenu();
                 break;
             case 'Q':
                 return true;
@@ -125,6 +129,11 @@ public class MainMenuView extends View {
         gameMenu.display();
     }*/
 
+   public void getGameMenu() {
+		GeneralStoreView gsView = new GeneralStoreView();
+		gsView.display();
+   }
+    
     public void getMenu() {
 		HelpMenuView helpMenuView = new HelpMenuView();
 		helpMenuView.display();
