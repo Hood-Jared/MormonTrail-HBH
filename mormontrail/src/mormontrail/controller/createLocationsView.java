@@ -1,9 +1,11 @@
+package mormontrail.controller;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mormontrail.controller;
+
 import java.io.Serializable;
 import java.util.Objects;
 import mormontrail.Mormontrail;
@@ -21,10 +23,25 @@ public class createLocationsView {
 	if (rows <1 || columns < 1){
            return null;
         }
-            //ENDIF? 
-	int locations [][] = new int Location [][];
+            
+        Location [][] locations = new  Location [rows][columns];
              
-		
-	
+        for (int i = 0; i< rows; i++){
+            
+        
+            for (int j = 0; j< columns; j++){
+            
+              Location  temp = new Location();
+                
+               temp.setRow(i);
+               temp.setColumn(j);
+               temp.setVisited(false);
+          
+                       locations [i][j]= temp;
+            }
+      
+            
     }
+        
+        
 }
