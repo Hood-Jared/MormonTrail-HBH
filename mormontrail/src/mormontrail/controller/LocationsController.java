@@ -15,7 +15,7 @@ import mormontrail.model.Player;
  *
  * @author Chaskiel
  */
-public class createLocationsView {
+public class LocationsController {
     
     public static Location[][] createLocations (int rows, int columns){
 		
@@ -44,4 +44,4 @@ public class createLocationsView {
     }
         
         
-}
+
