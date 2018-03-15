@@ -7,6 +7,7 @@ package mormontrail.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javafx.scene.Scene;
 
 /**
  *
@@ -108,6 +109,10 @@ public class Location implements Serializable {
 		}
 		return true;
 	}
+
+    public void setScene(Scene scene) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 	
 	
 	
