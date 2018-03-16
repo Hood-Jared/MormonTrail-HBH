@@ -117,6 +117,9 @@ public static InventoryItem[] createItems()  {
     wheel.setDescription("Wagon Wheel");
     wheel.setQuantityInStock(0);
     wheel.setRequiredAmount(0);
+      
+    
+    return null;
     
    
     

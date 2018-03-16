@@ -41,7 +41,7 @@ Assign items2 to a position in the items array
 
 */
 //RETURN items
-}
+
 
   //  
     
