@@ -24,7 +24,24 @@ public class InventoryController implements Serializable{
         return invItemUsage = quantity * ( qtyActors * daysOfTravel );
        }
 }
+//public static InventoryItem createItems(){
 
+
+
+/*
+items = create an array InventoryItem objects
+
+item1 = new InventoryItem object
+Assign values to each attribute in the InventoryItem object
+Assign items1 to a position in the items array
+
+item2 = new InventoryItem object
+Assign values to each attribute in the InventoryItem object
+Assign items2 to a position in the items array
+
+*/
+//RETURN items
+}
 
   //  
     

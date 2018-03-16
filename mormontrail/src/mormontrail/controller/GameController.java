@@ -16,7 +16,7 @@ import mormontrail.model.Player;
 public class GameController implements Serializable{
     
    
-    
+
     
   public static int calcDailyFoodUsage(int amount,int noPeople)  {
   
@@ -101,6 +101,26 @@ END */
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+public static InventoryItem[] createItems()  {
+    
+    InventoryItem food = new InventoryItem();
+    food.setDescription("Food");
+    food.setQuantityInStock(0);
+    food.setRequiredAmount(0);
+    
+    InventoryItem ammo = new InventoryItem();
+    ammo.setDescription("Ammo");
+    ammo.setQuantityInStock(0);
+    ammo.setRequiredAmount(0);
+    
+    InventoryItem wheel = new InventoryItem();
+    wheel.setDescription("Wagon Wheel");
+    wheel.setQuantityInStock(0);
+    wheel.setRequiredAmount(0);
+    
+   
+    
+}
 
 }
     
