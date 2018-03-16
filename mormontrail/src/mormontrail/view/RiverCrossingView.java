@@ -80,8 +80,9 @@ public boolean doAction(String value){
     }    
     return false;
     
-  /*  
 }
+  /*  
+
 public String getInput(){
 Scanner keyboard = new Scanner(System.in);
 boolean valid = false;
@@ -101,12 +102,18 @@ while (!valid){
 return selection;
 */
 
-    
+    private void riverInches (){
+        int inches[] = {1,2,3,4,5,6,7,8,9,10};
+        
+        for (int i = 0; i<inches.length; i++){
+            System.out.println(inches[i]);
+        
+        }
+    }
 
 
 
   
-}
 
     private void goAround() {
        System.out.println("It works");
@@ -121,3 +128,5 @@ return selection;
     }
 
 }
+
+

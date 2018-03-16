@@ -19,6 +19,7 @@ public class MainMenuView extends View {
                      + "\nG - Go to General Store"
                      + "\nR - Restart Saved Game"
                      + "\nH - Go to Help Menu"
+                     +"\nM - Go to game menu view"
                      + "\nQ - Quit"
                      + "\n");
    }
@@ -108,6 +109,10 @@ public class MainMenuView extends View {
                 break;
             case 'Q':
                 return true;
+                case 'M':
+                    getOtherMap();
+                /*this.startNewGame(player);*/
+                break;
             default:
                 System.out.println("Invalid Input - Please try again.");
                 break;
@@ -150,6 +155,11 @@ public class MainMenuView extends View {
     public boolean doAction(String value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
+
+    private void getOtherMap() {
+        GameMenuView gameMenuView = new GameMenuView();
+		gameMenuView.display();
+    }
 }
    
   

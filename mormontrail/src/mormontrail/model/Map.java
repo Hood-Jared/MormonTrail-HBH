@@ -18,7 +18,7 @@ public class Map implements Serializable {
 	// class instance variables
 	private String description;
 	private int locationSequence;
-	private ArrayList<Location> locations = new ArrayList<Location>();
+	Location[][] locations = new Location [9][9];
 
 	public Map() {
 	}
@@ -39,13 +39,15 @@ public class Map implements Serializable {
 		this.locationSequence = locationSequence;
 	}
 
-	public ArrayList<Location> getLocations() {
-		return locations;
-	}
+    public Location[][] getLocations() {
+        return locations;
+    }
 
-	public void setLocations(ArrayList<Location> locations) {
-		this.locations = locations;
-	}
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+	
 
 	@Override
 	public String toString() {

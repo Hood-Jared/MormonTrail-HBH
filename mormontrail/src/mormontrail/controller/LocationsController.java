@@ -33,8 +33,8 @@ public class LocationsController {
             
               Location  temp = new Location();
                 
-               temp.setRow(i);
-               temp.setColumn(j);
+               temp.setRows(i);
+               temp.setColumns(j);
                temp.setVisited(false);
           
                        locations [i][j]= temp;
@@ -42,6 +42,8 @@ public class LocationsController {
       
             
     }
-        
+        return locations; 
+    }
+}
         
 

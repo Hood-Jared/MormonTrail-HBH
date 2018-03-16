@@ -3,16 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mormontrail.controller;
+package mormontrail.model;
 
 import javafx.scene.Scene;
 
 /**
  *
  * @author Chaskiel
- */
+
+
+*/
+
+/*
 public class createScenes {
     public static Scene[] createScenes() {
+        scenes Scene[];
         
+        new scene1 = [?]
     }
 }
+*/

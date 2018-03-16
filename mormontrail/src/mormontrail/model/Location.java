@@ -21,6 +21,9 @@ public class Location implements Serializable {
 	private double distanceFromNauvoo;
 	private double distanceToSaltLake;
 	private int nextSettlement;
+        private int rows;
+        private int columns;
+        private boolean visited;
 
 	public Location() {
 	}
@@ -64,6 +67,33 @@ public class Location implements Serializable {
 	public void setNextSettlement(int nextSettlement) {
 		this.nextSettlement = nextSettlement;
 	}
+
+    public int getRows() {
+        return rows;
+    }
+
+    public void setRows(int rows) {
+        this.rows = rows;
+    }
+
+    public int getColumns() {
+        return columns;
+    }
+
+    public void setColumns(int columns) {
+        this.columns = columns;
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+        
+        
+        
 
 	@Override
 	public String toString() {

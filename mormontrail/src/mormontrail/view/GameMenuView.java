@@ -1,5 +1,9 @@
 package mormontrail.view;
 
+import static mormontrail.Mormontrail.getCurrentGame;
+import mormontrail.model.Game;
+import mormontrail.model.Location;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -47,6 +51,10 @@ public class GameMenuView extends View  {
                     HelpMenuView helpMenuView = new HelpMenuView();
                     helpMenuView.display();
                     break;
+                    
+                case 'V':
+                    this.displayMap();
+                    break;
 
                 
                 
@@ -58,6 +66,46 @@ public class GameMenuView extends View  {
      return false;
              }
 	
+             public void displayMap() {
+                 System.out.println("display the map");
+                 
+                 
+            Game game = getCurrentGame();
+            
+           Location[][] locations = game.getMap().getLocations();
+                 
+                 System.out.println("Im the map");
+                 System.out.println("1    2    3    4    5    6    7    8    9    10");
+                 
+                 for(int i=0;i<10; i++){
+                  System.out.println("---------------------------------------------------");
+                  System.out.print(i+1);
+                  
+                  for (int j= 0; j<10;j++){
+                      System.out.print("|");
+                     Location location = locations [i][j];
+                     
+                  
+                    if(location.isVisited()){
+                         System.out.print(" LT ");
+                         
+                    }
+                    else 
+                        System.out.print(" ?? ");
+                        
+                    
+                  }
+                  System.out.print("|");
+                 }
+                     
+                 
+                 
+                 
+                 System.out.println("---------------------------------------------------");
+                 
+             }
+    
+    
     }
 
 
