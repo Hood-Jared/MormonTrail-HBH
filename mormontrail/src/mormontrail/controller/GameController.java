@@ -5,8 +5,10 @@
  */
 package mormontrail.controller;
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.Objects;
 import mormontrail.Mormontrail;
+import static mormontrail.model.ItemType.food;
 import mormontrail.model.Player;
 /**
  *
@@ -101,7 +103,10 @@ END */
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-public static InventoryItem[] createItems()  {
+public static int[] createItems(Array items)  {
+    
+    int[] num = {1,2,3};
+   
     
     InventoryItem food = new InventoryItem();
     food.setDescription("Food");
@@ -119,9 +124,23 @@ public static InventoryItem[] createItems()  {
     wheel.setRequiredAmount(0);
       
     
-    return null;
-    
+    return num; 
    
+    
+}
+
+    public static int[] createMap(int noOfRows,
+                                  int noOfColumns,
+                                  InventoryItem[] items){
+      
+       if( noOfRows < 0 || noOfColumns < 0)
+               return null;
+       
+      // if( items = 0 || int.length() < 1);
+           return null;
+       
+      
+    
     
 }
 
