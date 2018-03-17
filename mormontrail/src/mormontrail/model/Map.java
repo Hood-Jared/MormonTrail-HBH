@@ -19,6 +19,7 @@ public class Map implements Serializable {
 	private String description;
 	private int locationSequence;
 	Location[][] locations = new Location [9][9];
+	
 
 	public Map() {
 	}
