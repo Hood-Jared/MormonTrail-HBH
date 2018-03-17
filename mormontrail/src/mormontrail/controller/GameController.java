@@ -12,8 +12,13 @@ import static javafx.beans.binding.Bindings.length;
 import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 import mormontrail.Mormontrail;
 import static mormontrail.controller.LocationsController.createLocations;
+import mormontrail.model.Actor;
+import mormontrail.model.Game;
+import mormontrail.model.InventoryItem;
+import mormontrail.controller.InventoryItems;
 import static mormontrail.model.ItemType.food;
 import mormontrail.model.Location;
+import mormontrail.model.Map;
 import mormontrail.model.Player;
 /**
  *
@@ -25,7 +30,7 @@ public class GameController implements Serializable{
    
     
 	private Player player;
-	private InventoryItem[] inventory;
+	private InventoryItems[] inventory;
 	private Map map;
 
     
@@ -110,20 +115,48 @@ END */
 
     public static void createNewGame(Player player) {
         if (player == null) {
-			return -1;
+			return;
 		}
 		
 		Game game = new Game();
 		game.setPlayer(player);
 		Mormontrail.setCurrentGame(game);
 		
-		public static int[] createItems(Array items) {
+		//actor = createActors();
+		InventoryItems[] items = createItems();
+		game.setInventory(items);
+		MapControl map = createMap(3, 3, items);
+		game.setMap(map);
+		
+		
+		
+		
+	}
+		
+		public static InventoryItems[] /*int[]*/ createItems(/*Array items*/) {
 
-			int[] num = {1, 2, 3};
+			InventoryItems[] num = /*{1, 2, 3}*/ null;
+			InventoryItems food = new InventoryItems();
+			food.setDescription("Food");
+			food.setQuantityInStock(0);
+			food.setRequiredAmount(0);
+
+			InventoryItems ammo = new InventoryItems();
+			ammo.setDescription("Ammo");
+			ammo.setQuantityInStock(0);
+			ammo.setRequiredAmount(0);
+
+			InventoryItems wheel = new InventoryItems();
+			wheel.setDescription("Wagon Wheel");
+			wheel.setQuantityInStock(0);
+			wheel.setRequiredAmount(0);
+			
+			return num;
+		}
 
     public static MapControl createMap(int noOfRows,
                                   int noOfColumns,
-                                  InventoryItem[] items){
+                                  InventoryItems[] items){
       
        if( noOfRows < 0 || noOfColumns < 0);
        
@@ -142,11 +175,12 @@ END */
        return location;
        
     }
-   
-    
-   
-    }
 
+	
+	public static Actor[] createActors() {
+		return null;
+	}
+	
     class createLocations {
 
         public createLocations() {

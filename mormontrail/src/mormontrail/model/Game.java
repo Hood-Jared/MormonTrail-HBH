@@ -12,6 +12,8 @@ package mormontrail.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import mormontrail.controller.MapControl;
+import mormontrail.controller.InventoryItems;
 
 
 public class Game implements Serializable{
@@ -22,14 +24,14 @@ public class Game implements Serializable{
 	public double milesTraveled;
 	public double currentMoneyBalance;
 	private Player player;
-	private Map map;
-	private InventoryItem[] inventory;
+	private MapControl map;
+	private InventoryItems[] inventory;
 
-	public InventoryItem[] getInventory() {
+	public InventoryItems[] getInventory() {
 		return inventory;
 	}
 
-	public void setInventory(InventoryItem[] inventory) {
+	public void setInventory(InventoryItems[] inventory) {
 		this.inventory = inventory;
 	}
    
@@ -76,11 +78,11 @@ public class Game implements Serializable{
 		this.player = player;
 	}
 
-	public Map getMap() {
+	public MapControl getMap() {
 		return map;
 	}
 
-	public void setMap(Map map) {
+	public void setMap(MapControl map) {
 		this.map = map;
 	}
 

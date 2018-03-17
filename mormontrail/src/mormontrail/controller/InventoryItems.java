@@ -9,7 +9,7 @@ package mormontrail.controller;
  *
  * @author jared
  */
-class InventoryItem {
+public class InventoryItems {
 
 
 

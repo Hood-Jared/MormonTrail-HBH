@@ -71,7 +71,7 @@ public void createMap() {
     }
                   
             
-    private static void assignItemsToScenes(InventoryItem[] items,
+    private static void assignItemsToScenes(InventoryItems[] items,
                                             Scene[] scenes){
         
     }
