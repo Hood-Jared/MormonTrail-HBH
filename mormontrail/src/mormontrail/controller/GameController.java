@@ -7,6 +7,9 @@ package mormontrail.controller;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.Objects;
+import java.util.Random;
+import static javafx.beans.binding.Bindings.length;
+import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 import mormontrail.Mormontrail;
 import static mormontrail.model.ItemType.food;
 import mormontrail.model.Player;
@@ -129,20 +132,32 @@ public static int[] createItems(Array items)  {
     
 }
 
-    public static int[] createMap(int noOfRows,
+    public static MapControl createMap(int noOfRows,
                                   int noOfColumns,
                                   InventoryItem[] items){
       
-       if( noOfRows < 0 || noOfColumns < 0)
-               return null;
+       if( noOfRows < 0 || noOfColumns < 0);
        
-      // if( items = 0 || int.length() < 1);
-           return null;
+       else 
        
-      
-    
-    
+     // if( items > 0 || int.length < 1);
+         
+       return null;
+       
+       MapControl location = new MapControl(); 
+       location.setDescription("Current Location");
+       location.setRow(0);
+       location.setColumn(0);
+       
+       
+       return location;
+       
+               
+  
+
 }
+
+    
 
 }
     
