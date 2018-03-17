@@ -11,6 +11,7 @@ package mormontrail.controller;
 import java.io.Serializable;
 import java.util.Objects;
 import static mormontrail.controller.GameController.createMap;
+import mormontrail.model.Location;
 /**
  *
  * @author Chaskiel
@@ -57,4 +58,34 @@ public void createMap() {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
+    
+    private static Location[][] createLocations(int rows,
+                                                int columns){
+    return null;
+            
+    }
+    private static Scene[] createScenes(){
+    
+        return null;
+    
+    }
+                  
+            
+    private static void assignItemsToScenes(InventoryItem[] items,
+                                            Scene[] scenes){
+        
+    }
+            
+            
+    private static void assignScenesToLocations(Scene[] scenes,
+                                            Location[][] locations){
+        
+    }
+
+    private static class Scene {
+
+        public Scene() {
+        }
+    }
+    
 }

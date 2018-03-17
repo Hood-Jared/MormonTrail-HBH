@@ -11,7 +11,9 @@ import java.util.Random;
 import static javafx.beans.binding.Bindings.length;
 import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 import mormontrail.Mormontrail;
+import static mormontrail.controller.LocationsController.createLocations;
 import static mormontrail.model.ItemType.food;
+import mormontrail.model.Location;
 import mormontrail.model.Player;
 /**
  *
@@ -19,6 +21,8 @@ import mormontrail.model.Player;
  */
 
 public class GameController implements Serializable{
+
+   
     
    
 
@@ -152,13 +156,27 @@ public static int[] createItems(Array items)  {
        
        return location;
        
-               
+    }
+   
+    
+   
+    }
+
+    class createLocations {
+
+        public createLocations() {
+            
+            int noOfRows = 8;
+            int noOfColumns = 8;
+        }
+    }
+                
   
 
-}
+
 
     
 
-}
+
     
 
