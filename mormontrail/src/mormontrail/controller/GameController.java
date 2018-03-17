@@ -7,10 +7,13 @@ package mormontrail.controller;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.Objects;
+import java.util.Random;
+import static javafx.beans.binding.Bindings.length;
+import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 import mormontrail.Mormontrail;
-import mormontrail.model.Game;
+import static mormontrail.controller.LocationsController.createLocations;
 import static mormontrail.model.ItemType.food;
-import mormontrail.model.Map;
+import mormontrail.model.Location;
 import mormontrail.model.Player;
 /**
  *
@@ -18,6 +21,8 @@ import mormontrail.model.Player;
  */
 
 public class GameController implements Serializable{
+
+   
     
 	private Player player;
 	private InventoryItem[] inventory;
@@ -116,40 +121,48 @@ END */
 
 			int[] num = {1, 2, 3};
 
-			InventoryItem food = new InventoryItem();
-			food.setDescription("Food");
-			food.setQuantityInStock(0);
-			food.setRequiredAmount(0);
+    public static MapControl createMap(int noOfRows,
+                                  int noOfColumns,
+                                  InventoryItem[] items){
+      
+       if( noOfRows < 0 || noOfColumns < 0);
+       
+       else 
+       
+     // if( items > 0 || int.length < 1);
+         
+       return null;
+       
+       MapControl location = new MapControl(); 
+       location.setDescription("Current Location");
+       location.setRow(0);
+       location.setColumn(0);
+       
+       
+       return location;
+       
+    }
+   
+    
+   
+    }
 
-			InventoryItem ammo = new InventoryItem();
-			ammo.setDescription("Ammo");
-			ammo.setQuantityInStock(0);
-			ammo.setRequiredAmount(0);
+    class createLocations {
 
-			InventoryItem wheel = new InventoryItem();
-			wheel.setDescription("Wagon Wheel");
-			wheel.setQuantityInStock(0);
-			wheel.setRequiredAmount(0);
+        public createLocations() {
+            
+            int noOfRows = 8;
+            int noOfColumns = 8;
+        }
+    }
+                
+  
 
-			return num;
 
-		}
-		//game.setInventory (InventoryItem[] items);
 
-		public static int[] createMap(int noOfRows, int noOfColumns, InventoryItem[] items) {
+    
 
-			if (noOfRows < 0 || noOfColumns < 0) {
-				return null;
-			}
 
-			// if( items = 0 || int.length() < 1);
-			return null;
-
-		}
-		//game.setMap(Map map);
-		
-	public static void createActors() {
-		
-	}		
+    
 
 }
