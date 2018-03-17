@@ -22,7 +22,16 @@ public class Game implements Serializable{
 	public double milesTraveled;
 	public double currentMoneyBalance;
 	private Player player;
-	private Map map;	
+	private Map map;
+	private InventoryItem[] inventory;
+
+	public InventoryItem[] getInventory() {
+		return inventory;
+	}
+
+	public void setInventory(InventoryItem[] inventory) {
+		this.inventory = inventory;
+	}
    
     public Game() {
    }

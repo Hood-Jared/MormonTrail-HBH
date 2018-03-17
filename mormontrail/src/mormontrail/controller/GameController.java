@@ -8,7 +8,9 @@ import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.Objects;
 import mormontrail.Mormontrail;
+import mormontrail.model.Game;
 import static mormontrail.model.ItemType.food;
+import mormontrail.model.Map;
 import mormontrail.model.Player;
 /**
  *
@@ -17,7 +19,9 @@ import mormontrail.model.Player;
 
 public class GameController implements Serializable{
     
-   
+	private Player player;
+	private InventoryItem[] inventory;
+	private Map map;
 
     
   public static int calcDailyFoodUsage(int amount,int noPeople)  {
@@ -100,50 +104,52 @@ END */
 	}  
 
     public static void createNewGame(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        if (player == null) {
+			return -1;
+		}
+		
+		Game game = new Game();
+		game.setPlayer(player);
+		Mormontrail.setCurrentGame(game);
+		
+		public static int[] createItems(Array items) {
 
-public static int[] createItems(Array items)  {
-    
-    int[] num = {1,2,3};
-   
-    
-    InventoryItem food = new InventoryItem();
-    food.setDescription("Food");
-    food.setQuantityInStock(0);
-    food.setRequiredAmount(0);
-    
-    InventoryItem ammo = new InventoryItem();
-    ammo.setDescription("Ammo");
-    ammo.setQuantityInStock(0);
-    ammo.setRequiredAmount(0);
-    
-    InventoryItem wheel = new InventoryItem();
-    wheel.setDescription("Wagon Wheel");
-    wheel.setQuantityInStock(0);
-    wheel.setRequiredAmount(0);
-      
-    
-    return num; 
-   
-    
+			int[] num = {1, 2, 3};
+
+			InventoryItem food = new InventoryItem();
+			food.setDescription("Food");
+			food.setQuantityInStock(0);
+			food.setRequiredAmount(0);
+
+			InventoryItem ammo = new InventoryItem();
+			ammo.setDescription("Ammo");
+			ammo.setQuantityInStock(0);
+			ammo.setRequiredAmount(0);
+
+			InventoryItem wheel = new InventoryItem();
+			wheel.setDescription("Wagon Wheel");
+			wheel.setQuantityInStock(0);
+			wheel.setRequiredAmount(0);
+
+			return num;
+
+		}
+		//game.setInventory (InventoryItem[] items);
+
+		public static int[] createMap(int noOfRows, int noOfColumns, InventoryItem[] items) {
+
+			if (noOfRows < 0 || noOfColumns < 0) {
+				return null;
+			}
+
+			// if( items = 0 || int.length() < 1);
+			return null;
+
+		}
+		//game.setMap(Map map);
+		
+	public static void createActors() {
+		
+	}		
+
 }
-
-    public static int[] createMap(int noOfRows,
-                                  int noOfColumns,
-                                  InventoryItem[] items){
-      
-       if( noOfRows < 0 || noOfColumns < 0)
-               return null;
-       
-      // if( items = 0 || int.length() < 1);
-           return null;
-       
-      
-    
-    
-}
-
-}
-    
-

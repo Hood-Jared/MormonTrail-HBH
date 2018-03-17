@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author jared
  */
-public class IventoryItem implements Serializable{
+public class InventoryItem implements Serializable{
 
     static String invItem1;
     static String invItem2;
