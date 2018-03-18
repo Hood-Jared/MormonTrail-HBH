@@ -5,12 +5,16 @@
  */
 package mormontrail.model;
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 /**
  *
  * @author jared
  */
 public class InventoryItem implements Serializable{
+
+    
+    
 
     static String invItem1;
     static String invItem2;
@@ -21,6 +25,16 @@ public class InventoryItem implements Serializable{
     static int qtyAmmo;
     static int qtyFood;
     
+  
+    public enum InventoryList{
+        
+       food,
+       ammo,
+       wheel,
+       money;
+       
+        
+	}
     
     
     public static void main(String[] args) {
@@ -38,5 +52,14 @@ public class InventoryItem implements Serializable{
         int hash = 3;
         hash = 31 * hash + Objects.hashCode(invItem4);
     return qtyAmmo;
+    }
+
+    private static class addInventory {
+
+        public addInventory() {
+            
+            
+            
+        }
     }
 }
