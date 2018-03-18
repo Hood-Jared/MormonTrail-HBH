@@ -4,17 +4,16 @@
  * and open the template in the editor.
  */
 package mormontrail.model;
+
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
+
 /**
  *
  * @author jared
  */
-public class InventoryItem implements Serializable{
-
-    
-    
+public class InventoryItem implements Serializable {
 
     static String invItem1;
     static String invItem2;
@@ -24,42 +23,36 @@ public class InventoryItem implements Serializable{
     static int qtyWagonWheel;
     static int qtyAmmo;
     static int qtyFood;
-    
-  
-    public enum InventoryList{
-        
-       food,
-       ammo,
-       wheel,
-       money;
-       
-        
-	}
-    
-    
+
+    public enum InventoryList {
+
+        food,
+        ammo,
+        wheel,
+        money;
+
+    }
+
     public static void main(String[] args) {
-        
+
         invItem1 = "Wagon Wheel(s)";
         invItem2 = "Pounds of Food Stuff";
         invItem3 = "Money";
         invItem4 = "Ammo";
-        
-       
-    
+
     }
+
     @Override
-    public int hashCode(){
+    public int hashCode() {
         int hash = 3;
         hash = 31 * hash + Objects.hashCode(invItem4);
-    return qtyAmmo;
+        return qtyAmmo;
     }
 
     private static class addInventory {
 
         public addInventory() {
-            
-            
-            
+
         }
     }
 }

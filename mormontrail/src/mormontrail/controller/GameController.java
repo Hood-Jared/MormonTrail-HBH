@@ -26,7 +26,6 @@ import mormontrail.model.Player;
  *
  * @author jared, heather, chas
  */
-
 public class GameController implements Serializable {
 
     private Player player;
