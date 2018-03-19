@@ -102,13 +102,24 @@ while (!valid){
 return selection;
 */
 
-    private void riverInches (){
+    private boolean riverInches (){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a guess of the rivers depth: ");
+        int depth = input.nextInt();
         int inches[] = {1,2,3,4,5,6,7,8,9,10};
         
         for (int i = 0; i<inches.length; i++){
-            System.out.println(inches[i]);
+           
+            if (depth == inches [i]){
+                return true;
+            }
+                    
         
+            
         }
+        
+        return false;
     }
 
 

@@ -4,6 +4,7 @@
  */
 package mormontrail.controller;
 
+import Exception.exception.InventoryControlException;
 import java.io.Serializable;
 import java.util.Objects;
 import mormontrail.model.Game;
@@ -15,10 +16,10 @@ public class InventoryController implements Serializable {
     public static int daysOfTravel;
     public static int qtyActors;
 
-    public static int calcInventoryUsage(int quantity, int daysOfTravel, int qtyActors) {
+    public static int calcInventoryUsage(int quantity, int daysOfTravel, int qtyActors) throws InventoryControlException {
 
         if (quantity <= 0 || quantity >= 100) {
-            return -1;
+           throw new InventoryControlException("Enter a number between 0-100.");
         }
 
         return invItemUsage = quantity * (qtyActors * daysOfTravel);
