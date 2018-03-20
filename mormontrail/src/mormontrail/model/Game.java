@@ -26,6 +26,19 @@ public class Game implements Serializable{
 	private Player player;
 	private MapControl map;
 	private InventoryItems[] inventory;
+	private Actor[] actors;
+
+
+   
+    public Game() {
+   }
+	public Actor[] getActors() {
+		return actors;
+	}
+
+	public void setActors(Actor[] actors) {
+		this.actors = actors;
+	}
 
 	public InventoryItems[] getInventory() {
 		return inventory;
@@ -34,10 +47,6 @@ public class Game implements Serializable{
 	public void setInventory(InventoryItems[] inventory) {
 		this.inventory = inventory;
 	}
-   
-    public Game() {
-   }
-
 	public int getDaysOnTrail() {
 		return daysOnTrail;
 	}

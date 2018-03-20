@@ -17,6 +17,7 @@ import mormontrail.model.Actor;
 import mormontrail.model.Game;
 import mormontrail.model.InventoryItem;
 import mormontrail.controller.InventoryItems;
+import mormontrail.model.ActorType;
 import static mormontrail.model.ItemType.food;
 import mormontrail.model.Location;
 import mormontrail.model.Map;
@@ -121,8 +122,11 @@ END */
         Game game = new Game();
         game.setPlayer(player);
         Mormontrail.setCurrentGame(game);
-
-        //actor = createActors();
+		
+		Actor[] actors = createActors();
+		game.setActors(actors);
+		player.setPlayerActor(actors[ActorType.Me.ordinal()]);		
+      
         InventoryItems[] items = createItems();
         game.setInventory(items);
         MapControl map = createMap(3, 3, items);
@@ -170,7 +174,19 @@ END */
     }
 
     public static Actor[] createActors() {
-        return null;
+        Actor[] actors = null;
+		Actor ma = new Actor("Ma", 3, 40, 1, 2, 4, 150, 4);
+		actors[ActorType.Ma.ordinal()] = ma;
+		Actor pa = new Actor("Pa", 4, 42, 0, 4, 2, 300, 4);
+		actors[ActorType.Pa.ordinal()] = pa;
+		Actor brother = new Actor("Brother", 4, 18, 0, 3, 2, 200, 4);
+		actors[ActorType.Brother.ordinal()] = brother;
+		Actor sister = new Actor("Sister", 3, 15, 1, 2, 4, 100, 4);
+		actors[ActorType.Sister.ordinal()] = sister;
+		Actor me = new Actor("Player1", 3, 17, 1, 3, 3, 150, 4);
+		actors[ActorType.Me.ordinal()] = me;
+		
+		return actors;
     }
 
     class createLocations {

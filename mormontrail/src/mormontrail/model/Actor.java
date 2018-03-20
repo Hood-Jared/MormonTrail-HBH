@@ -26,7 +26,15 @@ public class Actor implements Serializable{
 	private int healthStatus;
 	private ArrayList<Game> games = new ArrayList<Game>();
    
-    public Actor() {
+    public Actor(String name, int stamina, int age, int gender, int huntingSkill, int gatheringSkill, int money, int healthStatus) {
+		this.name = name;
+		this.stamina = stamina;
+		this.age = age;
+		this.gender = gender;
+		this.huntingSkill = huntingSkill;
+		this.gatheringSkill = gatheringSkill;
+		this.money = money;
+		this.healthStatus = healthStatus;
     }
 
 	public String getName() {
