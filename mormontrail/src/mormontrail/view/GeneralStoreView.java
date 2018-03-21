@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package mormontrail.view;
+import Exception.exception.GenearlStoreViewException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mormontrail.controller.GameController;
 import mormontrail.view.StartProgramView;
 import mormontrail.model.Player;
@@ -35,7 +38,13 @@ public GeneralStoreView(){
 		
         switch (charSel) {
            case 'F':
+        {
+            try {
                 this.addInventoryFood();
+            } catch (GenearlStoreViewException ex) {
+                Logger.getLogger(GeneralStoreView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'A':
                 addInventoryAmmo();
@@ -53,7 +62,7 @@ public GeneralStoreView(){
     
 }
 
-    private static int addInventoryFood() {
+    private static int addInventoryFood() throws GenearlStoreViewException{
        
     
         System.out.println("How Many Pounds of Food do you want to Purchase?");
@@ -75,7 +84,7 @@ public GeneralStoreView(){
                 System.out.println("Input is invalid - Please choose at least 100 lbs");
             }  
          
-    return -1;
+   throw new GenearlStoreViewException("choose a number between 100 to 5000.");
              
                   
     }       
