@@ -5,6 +5,9 @@
  */
 package mormontrail.controller;
 
+import Exception.exception.GameControllerException;
+import Exception.exception.InventoryItemsException;
+import Exception.exception.MapControllerException;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.Objects;
@@ -78,7 +81,7 @@ END */
 
     }
 
-    public static Player savePlayer(String playersName) {
+    public static Player savePlayer(String playersName) throws GameControllerException  {
         /* savePlayer(name): Player
 			BEGIN
 			if name is null OR length of name is < 1 THEN
@@ -104,17 +107,17 @@ END */
 
     }
 
-    public static void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static void display() throws GameControllerException {
+        throw new GameControllerException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public static Player getPlayer() {
+    public static Player getPlayer() throws GameControllerException {
         System.out.println("*** getPlayer()called ***");
-        return null;
+         throw new GameControllerException("Not supported yet.");
 
     }
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControllerException, InventoryItemsException {
         if (player == null) {
             return;
         }
@@ -134,7 +137,7 @@ END */
 
     }
 
-    public static InventoryItems[] /*int[]*/ createItems(/*Array items*/) {
+    public static InventoryItems[] /*int[]*/ createItems(/*Array items*/) throws InventoryItemsException {
 
         InventoryItems[] num = /*{1, 2, 3}*/ null;
         InventoryItems food = new InventoryItems();
@@ -157,7 +160,7 @@ END */
 
     public static MapControl createMap(int noOfRows,
             int noOfColumns,
-            InventoryItems[] items) {
+            InventoryItems[] items) throws MapControllerException {
 
         if (noOfRows < 0 || noOfColumns < 0); else // if( items > 0 || int.length < 1);
         {
