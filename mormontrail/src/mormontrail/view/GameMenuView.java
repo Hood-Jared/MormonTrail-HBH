@@ -60,6 +60,9 @@ public class GameMenuView extends View {
                     Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
+			case 'M':
+				MoveActorView moveActorView = new MoveActorView();
+				moveActorView.display();
             break;
 
             default:

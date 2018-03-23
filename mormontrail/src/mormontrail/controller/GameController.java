@@ -192,13 +192,12 @@ END */
         return actors;
     }
 
-    class createLocations {
 
-        public createLocations() {
+
+        /*public createLocations() {
 
             int noOfRows = 8;
             int noOfColumns = 8;
-        }
-    }
+        }*/
 
 }

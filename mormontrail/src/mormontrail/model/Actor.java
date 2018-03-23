@@ -24,6 +24,8 @@ public class Actor implements Serializable {
     private int gatheringSkill;
     private int money;
     private int healthStatus;
+	private int row;
+	private int column;
     private ArrayList<Game> games = new ArrayList<Game>();
 
     public Actor(String name, int stamina, int age, int gender, int huntingSkill, int gatheringSkill, int money, int healthStatus) {
@@ -100,6 +102,22 @@ public class Actor implements Serializable {
     public void setHealthStatus(int healthStatus) {
         this.healthStatus = healthStatus;
     }
+	
+	public int getRow() {
+		return row;
+	}
+
+	public void setRow(int row) {
+		this.row = row;
+	}
+
+	public int getColumn() {
+		return column;
+	}
+
+	public void setColumn(int column) {
+		this.column = column;
+	}
 
     public ArrayList<Game> getGames() {
         return games;

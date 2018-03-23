@@ -24,6 +24,8 @@ public class Location implements Serializable {
     private int rows;
     private int columns;
     private boolean visited;
+	// make getter and setter
+	private Actor actor;
 
     public Location() {
     }
@@ -92,6 +94,16 @@ public class Location implements Serializable {
         this.visited = visited;
     }
 
+	public Actor getActor() {
+		return actor;
+	}
+
+	public void setActor(Actor actor) {
+		this.actor = actor;
+	}
+
+	
+	
     @Override
     public String toString() {
         return "Location{" + "name=" + name + ", sceneType=" + sceneType + ", distanceFromNauvoo=" + distanceFromNauvoo + ", distanceToSaltLake=" + distanceToSaltLake + ", nextSettlement=" + nextSettlement + '}';
