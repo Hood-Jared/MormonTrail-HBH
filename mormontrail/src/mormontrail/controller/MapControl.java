@@ -8,7 +8,7 @@
 
  
 package mormontrail.controller;
-import Exception.exception.MapControllerException;
+import mormontrail.exception.MapControllerException;
 import java.io.Serializable;
 import java.util.Objects;
 import static mormontrail.controller.GameController.createMap;
@@ -37,19 +37,19 @@ public void createMap() throws MapControllerException {
                 
  }
 
-    void setDescription(String current_Location) {
+    void setDescription(String current_Location) throws MapControllerException {
         throw new MapControllerException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setRow(int i) {
+    void setRow(int i) throws MapControllerException {
         throw new MapControllerException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setColumn(int i) {
+    void setColumn(int i) throws MapControllerException {
         throw new MapControllerException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public Location[][] getLocations() {
+    public Location[][] getLocations() throws MapControllerException {
         throw new MapControllerException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -58,8 +58,8 @@ public void createMap() throws MapControllerException {
         public createMap() {
         }
 
-        private void display() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        private void display() throws MapControllerException {
+            throw new MapControllerException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
     

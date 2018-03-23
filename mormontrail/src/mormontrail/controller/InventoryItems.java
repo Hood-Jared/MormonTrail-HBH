@@ -5,6 +5,9 @@
  */
 package mormontrail.controller;
 
+import mormontrail.exception.InventoryControlException;
+import mormontrail.exception.InventoryItemsException;
+
 /**
  *
  * @author jared
@@ -14,9 +17,9 @@ public class InventoryItems {
 
 
  
-    void setDescription(String food) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    void setDescription(String food) throws InventoryItemsException {
+        throw new InventoryItemsException("Invalid Input.");
+        }
 
     void setQuantityInStock(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

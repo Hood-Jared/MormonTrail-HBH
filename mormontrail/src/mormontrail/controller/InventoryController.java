@@ -4,7 +4,7 @@
  */
 package mormontrail.controller;
 
-import Exception.exception.InventoryControlException;
+import mormontrail.exception.InventoryControlException;
 import java.io.Serializable;
 import java.util.Objects;
 import mormontrail.model.Game;

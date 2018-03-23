@@ -5,9 +5,9 @@
  */
 package mormontrail.controller;
 
-import Exception.exception.GameControllerException;
-import Exception.exception.InventoryItemsException;
-import Exception.exception.MapControllerException;
+import mormontrail.exception.GameControllerException;
+import mormontrail.exception.InventoryItemsException;
+import mormontrail.exception.MapControllerException;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.Objects;
