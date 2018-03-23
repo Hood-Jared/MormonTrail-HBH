@@ -32,7 +32,25 @@ public class MapControl {
  */
 public class MapControl {
 	private static	Location[][] locations;
+	private static int numberOfRows;
+	private static int numberOfColumns;
 
+	public static int getNumberOfRows() {
+		return numberOfRows;
+	}
+
+	public static void setNumberOfRows(int _numberOfRows) {
+		numberOfRows = _numberOfRows;
+	}
+
+	public static  int getNumberOfColumns() {
+		return numberOfColumns;
+	}
+
+	public static void setNumberOfColumns(int _numberOfColumns) {
+		numberOfColumns = _numberOfColumns;
+	}
+	
     public void createMap() throws MapControllerException {
         createMap cm = new createMap();
         cm.display();
@@ -71,6 +89,8 @@ public class MapControl {
 		}
 		
 		Location[][] locations = null;
+		setNumberOfRows(rows);
+		setNumberOfColumns(columns);
 		return locations;
     }
 
@@ -124,11 +144,11 @@ public class MapControl {
 			throw new MapControllerException("Missing actor.");
 		}
 		
-		game = mormontrail.Mormontrail.getCurrentGame();
-		map = Game.getMap();
-		locations1 = Map.getLocations();
+		//game = mormontrail.Mormontrail.getCurrentGame();
+		//map = Game.getMap();
+		//locations1 = Map.getLocations();
 		
-		if (newRow < 1 || newRow > noOfRows || newColumn < 1 || newColumn > noOfColumns) {
+		if (newRow < 1 || newRow > numberOfRows || newColumn < 1 || newColumn > numberOfColumns) {
 			throw new MapControllerException("Check row and/or column.");
 		}
 		
