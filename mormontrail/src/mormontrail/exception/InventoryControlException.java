@@ -9,7 +9,7 @@ package mormontrail.exception;
  *
  * @author Chaskiel
  */
-public class InventoryControlException  extends Exception {
+public class InventoryControlException extends Exception {
 
     public InventoryControlException() {
     }
@@ -29,5 +29,5 @@ public class InventoryControlException  extends Exception {
     public InventoryControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
         super(string, thrwbl, bln, bln1);
     }
-    
+
 }

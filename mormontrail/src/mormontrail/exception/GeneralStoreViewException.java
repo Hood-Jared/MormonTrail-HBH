@@ -9,12 +9,10 @@ package mormontrail.exception;
  *
  * @author jared
  */
-public class GeneralStoreViewException extends Exception  {
-   
-    public GeneralStoreViewException(String message){
-        super(message);
-    
-      
+public class GeneralStoreViewException extends Exception {
 
-}
+    public GeneralStoreViewException(String message) {
+        super(message);
+
+    }
 }

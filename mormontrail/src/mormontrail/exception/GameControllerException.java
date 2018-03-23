@@ -10,14 +10,12 @@ package mormontrail.exception;
  * @author jared
  */
 public class GameControllerException extends Exception {
-    
-    public GameControllerException(){
-    }
-        public GameControllerException(String message){
-            super(message);
-        }
-        
-        
-    }
-    
 
+    public GameControllerException() {
+    }
+
+    public GameControllerException(String message) {
+        super(message);
+    }
+
+}

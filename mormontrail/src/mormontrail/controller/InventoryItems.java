@@ -14,12 +14,9 @@ import mormontrail.exception.InventoryItemsException;
  */
 public class InventoryItems {
 
-
-
- 
     void setDescription(String food) throws InventoryItemsException {
         throw new InventoryItemsException("Invalid Input.");
-        }
+    }
 
     void setQuantityInStock(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -28,5 +25,5 @@ public class InventoryItems {
     void setRequiredAmount(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

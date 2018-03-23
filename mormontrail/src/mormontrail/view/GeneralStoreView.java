@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package mormontrail.view;
+
 import mormontrail.exception.GeneralStoreViewException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -12,45 +13,42 @@ import mormontrail.controller.GameController;
 import mormontrail.view.StartProgramView;
 import mormontrail.model.Player;
 
-
 /**
  *
  * @author jared
  */
+public class GeneralStoreView extends View {
 
-public class GeneralStoreView extends View{ 
+    public GeneralStoreView() {
 
-public GeneralStoreView(){
- 
-            super("\n"
+        super("\n"
                 + "Welcome to the General Store"
                 + "\nF - Purchase Food "
                 + "\nA - Purchase 50 rounds of Ammo"
                 + "\nW - Purchase Wagon Wheel"
                 + "\nE - Exit"
-                 + "\n");
-			
-}
-  public boolean doAction(String selection) {
-    
+                + "\n");
+
+    }
+
+    public boolean doAction(String selection) {
 
         char charSel = selection.charAt(0);
-		
+
         switch (charSel) {
-           case 'F':
-        {
-            try {
-                this.addInventoryFood();
-            } catch (GeneralStoreViewException ex) {
-                Logger.getLogger(GeneralStoreView.class.getName()).log(Level.SEVERE, null, ex);
+            case 'F': {
+                try {
+                    this.addInventoryFood();
+                } catch (GeneralStoreViewException ex) {
+                    Logger.getLogger(GeneralStoreView.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        }
-                break;
+            break;
             case 'A':
                 addInventoryAmmo();
                 break;
             case 'W':
-		addInventoryWheel();
+                addInventoryWheel();
                 break;
             case 'E':
                 return true;
@@ -59,46 +57,36 @@ public GeneralStoreView(){
                 break;
         }
         return false;
-    
-}
 
-    private static int addInventoryFood() throws GeneralStoreViewException{
-       
-    
+    }
+
+    private static int addInventoryFood() throws GeneralStoreViewException {
+
         System.out.println("How Many Pounds of Food do you want to Purchase?");
-            
-            Scanner input = new Scanner(System.in); 
-           
-    
-            String sc = "";
 
+        Scanner input = new Scanner(System.in);
+
+        String sc = "";
 
         int amount = Integer.parseInt(sc);
-               
-         if (amount <= 100 || amount >= 5000){
-                
+
+        if (amount <= 100 || amount >= 5000) {
+
             return amount;
-            }
-                
-            else {
-                System.out.println("Input is invalid - Please choose at least 100 lbs");
-            }  
-         
-   throw new GeneralStoreViewException("choose a number between 100 to 5000.");
-             
-                  
-    }       
-    
-        
-    
+        } else {
+            System.out.println("Input is invalid - Please choose at least 100 lbs");
+        }
+
+        throw new GeneralStoreViewException("choose a number between 100 to 5000.");
+
+    }
 
     private void addInventoryAmmo() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     private void addInventoryWheel() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
- }
-
+}

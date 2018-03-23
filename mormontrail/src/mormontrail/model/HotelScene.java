@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 package mormontrail.model;
+
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Chaskiel
@@ -66,4 +66,4 @@ public class Hotel implements Serializable{
     
 }
 
-*/
+ */

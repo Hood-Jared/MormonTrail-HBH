@@ -81,7 +81,7 @@ END */
 
     }
 
-    public static Player savePlayer(String playersName) throws GameControllerException  {
+    public static Player savePlayer(String playersName) throws GameControllerException {
         /* savePlayer(name): Player
 			BEGIN
 			if name is null OR length of name is < 1 THEN
@@ -113,7 +113,7 @@ END */
 
     public static Player getPlayer() throws GameControllerException {
         System.out.println("*** getPlayer()called ***");
-         throw new GameControllerException("Not supported yet.");
+        throw new GameControllerException("Not supported yet.");
 
     }
 
@@ -125,11 +125,11 @@ END */
         Game game = new Game();
         game.setPlayer(player);
         Mormontrail.setCurrentGame(game);
-		
-		Actor[] actors = createActors();
-		game.setActors(actors);
-		player.setPlayerActor(actors[ActorType.Me.ordinal()]);		
-      
+
+        Actor[] actors = createActors();
+        game.setActors(actors);
+        player.setPlayerActor(actors[ActorType.Me.ordinal()]);
+
         InventoryItems[] items = createItems();
         game.setInventory(items);
         MapControl map = createMap(3, 3, items);
@@ -178,18 +178,18 @@ END */
 
     public static Actor[] createActors() {
         Actor[] actors = null;
-		Actor ma = new Actor("Ma", 3, 40, 1, 2, 4, 150, 4);
-		actors[ActorType.Ma.ordinal()] = ma;
-		Actor pa = new Actor("Pa", 4, 42, 0, 4, 2, 300, 4);
-		actors[ActorType.Pa.ordinal()] = pa;
-		Actor brother = new Actor("Brother", 4, 18, 0, 3, 2, 200, 4);
-		actors[ActorType.Brother.ordinal()] = brother;
-		Actor sister = new Actor("Sister", 3, 15, 1, 2, 4, 100, 4);
-		actors[ActorType.Sister.ordinal()] = sister;
-		Actor me = new Actor("Player1", 3, 17, 1, 3, 3, 150, 4);
-		actors[ActorType.Me.ordinal()] = me;
-		
-		return actors;
+        Actor ma = new Actor("Ma", 3, 40, 1, 2, 4, 150, 4);
+        actors[ActorType.Ma.ordinal()] = ma;
+        Actor pa = new Actor("Pa", 4, 42, 0, 4, 2, 300, 4);
+        actors[ActorType.Pa.ordinal()] = pa;
+        Actor brother = new Actor("Brother", 4, 18, 0, 3, 2, 200, 4);
+        actors[ActorType.Brother.ordinal()] = brother;
+        Actor sister = new Actor("Sister", 3, 15, 1, 2, 4, 100, 4);
+        actors[ActorType.Sister.ordinal()] = sister;
+        Actor me = new Actor("Player1", 3, 17, 1, 3, 3, 150, 4);
+        actors[ActorType.Me.ordinal()] = me;
+
+        return actors;
     }
 
     class createLocations {

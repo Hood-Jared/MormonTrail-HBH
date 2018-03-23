@@ -14,31 +14,30 @@ import java.util.Objects;
  * @author heather
  */
 public class Map implements Serializable {
-    
-	// class instance variables
-	private String description;
-	private int locationSequence;
-	Location[][] locations = new Location [9][9];
-	
 
-	public Map() {
-	}
+    // class instance variables
+    private String description;
+    private int locationSequence;
+    Location[][] locations = new Location[9][9];
 
-	public String getDescription() {
-		return description;
-	}
+    public Map() {
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public int getLocationSequence() {
-		return locationSequence;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public void setLocationSequence(int locationSequence) {
-		this.locationSequence = locationSequence;
-	}
+    public int getLocationSequence() {
+        return locationSequence;
+    }
+
+    public void setLocationSequence(int locationSequence) {
+        this.locationSequence = locationSequence;
+    }
 
     public Location[][] getLocations() {
         return locations;
@@ -48,41 +47,38 @@ public class Map implements Serializable {
         this.locations = locations;
     }
 
-	
+    @Override
+    public String toString() {
+        return "Map{" + "description=" + description + ", locationSequence=" + locationSequence + '}';
+    }
 
-	@Override
-	public String toString() {
-		return "Map{" + "description=" + description + ", locationSequence=" + locationSequence + '}';
-	}
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 83 * hash + Objects.hashCode(this.description);
+        hash = 83 * hash + this.locationSequence;
+        return hash;
+    }
 
-	@Override
-	public int hashCode() {
-		int hash = 7;
-		hash = 83 * hash + Objects.hashCode(this.description);
-		hash = 83 * hash + this.locationSequence;
-		return hash;
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Map other = (Map) obj;
+        if (this.locationSequence != other.locationSequence) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        return true;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj == null) {
-			return false;
-		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		final Map other = (Map) obj;
-		if (this.locationSequence != other.locationSequence) {
-			return false;
-		}
-		if (!Objects.equals(this.description, other.description)) {
-			return false;
-		}
-		return true;
-	}
-	
-	
 }

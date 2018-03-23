@@ -10,20 +10,20 @@ package mormontrail.view;
  * @author heatherholt
  */
 public class HuntingView extends View {
-	
-	public HuntingView() {
-		super ("\n"
-				+ "\n------------------------------"
-				+ "\n   This is the Hunting View   "
-				+ "\n   Press Q to return to the   "
-				+ "\n         previous view        "
-				+ "\n------------------------------");
-	}
-	
-	@Override
-	public boolean doAction(String value) {
-		value = value.toUpperCase();
-		char charSel = value.charAt(0);
+
+    public HuntingView() {
+        super("\n"
+                + "\n------------------------------"
+                + "\n   This is the Hunting View   "
+                + "\n   Press Q to return to the   "
+                + "\n         previous view        "
+                + "\n------------------------------");
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
+        char charSel = value.charAt(0);
 
         switch (charSel) {
             case 'Q':
@@ -33,5 +33,5 @@ public class HuntingView extends View {
                 break;
         }
         return false;
-		}
-	}
+    }
+}

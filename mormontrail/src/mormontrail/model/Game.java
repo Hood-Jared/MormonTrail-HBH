@@ -6,136 +6,133 @@
 package mormontrail.model;
 
 /**
-*
-* @author Chaskiel, Jared, Heather
-*/
-
+ *
+ * @author Chaskiel, Jared, Heather
+ */
 import java.io.Serializable;
 import java.util.Objects;
 import mormontrail.controller.MapControl;
 import mormontrail.controller.InventoryItems;
 
+public class Game implements Serializable {
 
-public class Game implements Serializable{
-   
-	// class instance variables
-	public int daysOnTrail;
-	public int pace;
-	public double milesTraveled;
-	public double currentMoneyBalance;
-	private Player player;
-	private MapControl map;
-	private InventoryItems[] inventory;
-	private Actor[] actors;
+    // class instance variables
+    public int daysOnTrail;
+    public int pace;
+    public double milesTraveled;
+    public double currentMoneyBalance;
+    private Player player;
+    private MapControl map;
+    private InventoryItems[] inventory;
+    private Actor[] actors;
 
-
-   
     public Game() {
-   }
-	public Actor[] getActors() {
-		return actors;
-	}
+    }
 
-	public void setActors(Actor[] actors) {
-		this.actors = actors;
-	}
+    public Actor[] getActors() {
+        return actors;
+    }
 
-	public InventoryItems[] getInventory() {
-		return inventory;
-	}
+    public void setActors(Actor[] actors) {
+        this.actors = actors;
+    }
 
-	public void setInventory(InventoryItems[] inventory) {
-		this.inventory = inventory;
-	}
-	public int getDaysOnTrail() {
-		return daysOnTrail;
-	}
+    public InventoryItems[] getInventory() {
+        return inventory;
+    }
 
-	public void setDaysOnTrail(int daysOnTrail) {
-		this.daysOnTrail = daysOnTrail;
-	}
+    public void setInventory(InventoryItems[] inventory) {
+        this.inventory = inventory;
+    }
 
-	public int getPace() {
-		return pace;
-	}
+    public int getDaysOnTrail() {
+        return daysOnTrail;
+    }
 
-	public void setPace(int pace) {
-		this.pace = pace;
-	}
+    public void setDaysOnTrail(int daysOnTrail) {
+        this.daysOnTrail = daysOnTrail;
+    }
 
-	public double getMilesTraveled() {
-		return milesTraveled;
-	}
+    public int getPace() {
+        return pace;
+    }
 
-	public void setMilesTraveled(double milesTraveled) {
-		this.milesTraveled = milesTraveled;
-	}
+    public void setPace(int pace) {
+        this.pace = pace;
+    }
 
-	public double getCurrentMoneyBalance() {
-		return currentMoneyBalance;
-	}
+    public double getMilesTraveled() {
+        return milesTraveled;
+    }
 
-	public void setCurrentMoneyBalance(double currentMoneyBalance) {
-		this.currentMoneyBalance = currentMoneyBalance;
-	}
+    public void setMilesTraveled(double milesTraveled) {
+        this.milesTraveled = milesTraveled;
+    }
 
-	public Player getPlayer() {
-		return player;
-	}
+    public double getCurrentMoneyBalance() {
+        return currentMoneyBalance;
+    }
 
-	public void setPlayer(Player player) {
-		this.player = player;
-	}
+    public void setCurrentMoneyBalance(double currentMoneyBalance) {
+        this.currentMoneyBalance = currentMoneyBalance;
+    }
 
-	public MapControl getMap() {
-		return map;
-	}
+    public Player getPlayer() {
+        return player;
+    }
 
-	public void setMap(MapControl map) {
-		this.map = map;
-	}
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 
-	@Override
-	public String toString() {
-		return "Game{" + "daysOnTrail=" + daysOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + '}';
-	}
+    public MapControl getMap() {
+        return map;
+    }
 
-	@Override
-	public int hashCode() {
-		int hash = 5;
-		hash = 67 * hash + this.daysOnTrail;
-		hash = 67 * hash + this.pace;
-		hash = 67 * hash + (int) (Double.doubleToLongBits(this.milesTraveled) ^ (Double.doubleToLongBits(this.milesTraveled) >>> 32));
-		hash = 67 * hash + (int) (Double.doubleToLongBits(this.currentMoneyBalance) ^ (Double.doubleToLongBits(this.currentMoneyBalance) >>> 32));
-		return hash;
-	}
+    public void setMap(MapControl map) {
+        this.map = map;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj == null) {
-			return false;
-		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		final Game other = (Game) obj;
-		if (this.daysOnTrail != other.daysOnTrail) {
-			return false;
-		}
-		if (this.pace != other.pace) {
-			return false;
-		}
-		if (Double.doubleToLongBits(this.milesTraveled) != Double.doubleToLongBits(other.milesTraveled)) {
-			return false;
-		}
-		if (Double.doubleToLongBits(this.currentMoneyBalance) != Double.doubleToLongBits(other.currentMoneyBalance)) {
-			return false;
-		}
-		return true;
-	}
+    @Override
+    public String toString() {
+        return "Game{" + "daysOnTrail=" + daysOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + '}';
+    }
 
-    
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 67 * hash + this.daysOnTrail;
+        hash = 67 * hash + this.pace;
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.milesTraveled) ^ (Double.doubleToLongBits(this.milesTraveled) >>> 32));
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.currentMoneyBalance) ^ (Double.doubleToLongBits(this.currentMoneyBalance) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Game other = (Game) obj;
+        if (this.daysOnTrail != other.daysOnTrail) {
+            return false;
+        }
+        if (this.pace != other.pace) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.milesTraveled) != Double.doubleToLongBits(other.milesTraveled)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.currentMoneyBalance) != Double.doubleToLongBits(other.currentMoneyBalance)) {
+            return false;
+        }
+        return true;
+    }
+
 }

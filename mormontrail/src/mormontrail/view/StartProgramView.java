@@ -4,20 +4,25 @@
  * and open the template in the editor.
  */
 package mormontrail.view;
+
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mormontrail.controller.GameController;
+import mormontrail.exception.GameControllerException;
 import mormontrail.model.Player;
 
 /**
- * Jared Note *  GeneralStoreView, InventoryView, StartProgramView - Team Assignment.
+ * Jared Note * GeneralStoreView, InventoryView, StartProgramView - Team
+ * Assignment.
+ *
  * @author Chaskiel, Jared, Heather
  */
-public class StartProgramView extends View{
-    
-    
-    public String getInputs(){
-        
-    /*  
+public class StartProgramView extends View {
+
+    public String getInputs() {
+
+        /*  
         getInputs(): String[] {
 
  inputs = new String array one element long
@@ -39,67 +44,62 @@ ENDWHILE
 
 RETURN inputs 
         
-       */
-    
-    
-    
-     String inputs = new String();
-    
-        System.out.println("The Game is Starting!");
-       
-        boolean valid = false; 
-       
-        while (valid == false){
-          
-        
-      
-        
-          System.out.println("Please Enter your Name");
-          
-          Scanner input = new Scanner(System.in);
-          String name = input.nextLine();
-          String trim = name.trim();
-          
-          int length = trim.length ();
-          
-          if (length <= 1){
-                 System.out.println("re-enter a name with more than one letter");
-                 
-          }
-          else{
-              valid = true;
-              return trim;
-          }
-   
-      } 
-    
- 
-        
-    System.out.println("getInput (called");
-    
-    //String[] inputs = new String [1];
-    inputs = "testInput";
+         */
+        String inputs = new String();
 
-    return inputs;
+        System.out.println("The Game is Starting!");
+
+        boolean valid = false;
+
+        while (valid == false) {
+
+            System.out.println("Please Enter your Name");
+
+            Scanner input = new Scanner(System.in);
+            String name = input.nextLine();
+            String trim = name.trim();
+
+            int length = trim.length();
+
+            if (length <= 1) {
+                System.out.println("re-enter a name with more than one letter");
+
+            } else {
+                valid = true;
+                return trim;
+            }
+
+        }
+
+        System.out.println("getInput (called");
+
+        //String[] inputs = new String [1];
+        inputs = "testInput";
+
+        return inputs;
     }
-   
+
     public String playersName;
-	
-	
-@Override	
+
+    @Override
     public boolean doAction(String input) {
-		playersName = input;
-		Player player= GameController.savePlayer(playersName); 
-		if (player == null) {
-			System.out.println("Could not create the player. Enter a different name.");
-			return false;
-		}		
-		System.out.println("** Welcome to the game " + playersName +"! **");
-		
-		return true;
+        playersName = input;
+        Player player = null;
+        try {
+            player = GameController.savePlayer(playersName);
+        } catch (GameControllerException ex) {
+            Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (player == null) {
+            System.out.println("Could not create the player. Enter a different name.");
+            return false;
+        }
+        System.out.println("** Welcome to the game " + playersName + "! **");
+
+        return true;
     }
-	
-	/*public String getMenuInput() {
+
+    /*public String getMenuInput() {
 		
 		System.out.println("Choose an option from the menu:");
 
@@ -108,9 +108,8 @@ RETURN inputs
 
 		return selection;
 		}*/
-            
     public void display(Player player) {
-    /*    endOfView = false
+        /*    endOfView = false
     DO
            inputs = getInputs()
             IF no inputs were entered OR the first input is Q 
@@ -119,20 +118,19 @@ RETURN inputs
                    endOfView = doAction(inputs)
                            
               WHILE endOfView != true
-          */
-    boolean endOfView = false;
-    
-	String input = getInputs();
-            if (input.equals("") || input.equals("Q"))
-			{
-                    return; 
-            }
-	doAction(input/*, player*/);
-	
-	MainMenuView mainMenuView = new MainMenuView();
-	mainMenuView.display();
-    
-	/* do {
+         */
+        boolean endOfView = false;
+
+        String input = getInputs();
+        if (input.equals("") || input.equals("Q")) {
+            return;
+        }
+        doAction(input/*, player*/);
+
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
+
+        /* do {
         MainMenuView mainMenuView = new MainMenuView();
 		mainMenuView.display();
 		System.out.println("Menu Here");
@@ -140,12 +138,6 @@ RETURN inputs
 		System.out.println("Menu Here 2");
     }
     while (endOfView != true);*/
-	
-	
-        
     }
 
- 
-   
 }
-

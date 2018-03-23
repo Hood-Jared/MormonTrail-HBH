@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package mormontrail.model;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -11,36 +12,33 @@ import java.util.Objects;
  *
  * @author jared
  */
+public class GeneralStoreScene implements Serializable {
 
-public class GeneralStoreScene implements Serializable{
- 
-    static String gralItem1;  
+    static String gralItem1;
     static int qtyGralItem1;
     static int qtyCostItem1;
-    static String gralItem2;  
+    static String gralItem2;
     static int qtyGralItem2;
     static int qtyCostItem2;
-    static String gralItem3;  
+    static String gralItem3;
     static int qtyGralItem3;
     static int qtyCostItem3;
-    
-    
- public static void main(String[] args) {
-     
-      gralItem1 = "Food Stuffs";  
-      gralItem2 = "Wagon Wheels";  
-      gralItem3 = "Ammo";  
-      
+
+    public static void main(String[] args) {
+
+        gralItem1 = "Food Stuffs";
+        gralItem2 = "Wagon Wheels";
+        gralItem3 = "Ammo";
+
     }
 
     public static void setGralItem1(String gralItem1) {
         GeneralStoreScene.gralItem1 = gralItem1;
     }
- 
-    
+
     @Override
     public String toString() {
         return gralItem3 + "Costs $5 per 50 shells";
-    
-}
+
+    }
 }

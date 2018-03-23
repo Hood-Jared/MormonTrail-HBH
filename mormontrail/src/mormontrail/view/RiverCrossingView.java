@@ -3,41 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package mormontrail.view;
+
 import java.util.Scanner;
 import mormontrail.controller.GameController;
 import mormontrail.view.StartProgramView;
 import mormontrail.model.Player;
 
+public class RiverCrossingView extends View {
 
+    public RiverCrossingView() {
+        super("\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
+                + "\n*                                          *"
+                + "\n*   You have come accross a huge river     *"
+                + "\n* You must decide wheither to go accross   *"
+                + "\n*        or find another way around        *"
+                + "\n*      Going accross can save you time     *"
+                + "\n*       or it can be a huge mistake        *"
+                + "\n*           Chose your fate                *"
+                + "\n*             A: Go around                  *"
+                + "\n*             B: Find a path               *"
+                + "\n*             C: Pay Ferry                 *"
+                + "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
 
+    }
 
-public class RiverCrossingView extends View{
-        
-        
-        	public RiverCrossingView(){
-               super( "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
-                +"\n*                                          *"
-                +"\n*   You have come accross a huge river     *"
-                +"\n* You must decide wheither to go accross   *"
-                +"\n*        or find another way around        *"
-                +"\n*      Going accross can save you time     *"
-                +"\n*       or it can be a huge mistake        *"
-                +"\n*           Chose your fate                *"
-                +"\n*             A: Go around                  *"
-                +"\n*             B: Find a path               *"
-                +"\n*             C: Pay Ferry                 *"
-                +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
-    
-               
-                }
-
-                   
-                    
-
-                
-/*public void displayMainMenuView (){
+    /*public void displayMainMenuView (){
     boolean done = false;
     do{
         String menuOption= this.getMenuOption();
@@ -57,31 +48,34 @@ private String getMenuOption() {
     return "N";
     
 } 
-*/
-public boolean doAction(String value){
-   
-    switch (value){
-            case "A": System.out.println("go around "); 
-               goAround(); 
-               break;
+     */
+    public boolean doAction(String value) {
 
-             case "B": System.out.println("Find a path "); 
+        switch (value) {
+            case "A":
+                System.out.println("go around ");
+                goAround();
+                break;
+
+            case "B":
+                System.out.println("Find a path ");
                 findPath();
                 break;
-                
 
-             case "C": System.out.println("Take a ferry "); 
+            case "C":
+                System.out.println("Take a ferry ");
                 payFerry();
                 break;
 
-              default:
+            default:
                 System.out.println("Enter a diffrent output.");
                 break;
-    }    
-    return false;
-    
-}
-  /*  
+        }
+        return false;
+
+    }
+
+    /*  
 
 public String getInput(){
 Scanner keyboard = new Scanner(System.in);
@@ -100,38 +94,31 @@ while (!valid){
     break;
 }
 return selection;
-*/
+     */
+    private boolean riverInches() {
 
-    private boolean riverInches (){
-        
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a guess of the rivers depth: ");
         int depth = input.nextInt();
-        int inches[] = {1,2,3,4,5,6,7,8,9,10};
-        
-        for (int i = 0; i<inches.length; i++){
-           
-            if (depth == inches [i]){
+        int inches[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        for (int i = 0; i < inches.length; i++) {
+
+            if (depth == inches[i]) {
                 return true;
             }
-                    
-        
-            
+
         }
-        
+
         return false;
     }
 
-
-
-  
-
     private void goAround() {
-       System.out.println("It works");
+        System.out.println("It works");
     }
 
     private void findPath() {
-       System.out.println("It works");
+        System.out.println("It works");
     }
 
     private void payFerry() {
@@ -139,5 +126,3 @@ return selection;
     }
 
 }
-
-

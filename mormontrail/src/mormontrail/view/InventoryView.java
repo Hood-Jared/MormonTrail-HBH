@@ -4,46 +4,52 @@
  * and open the template in the editor.
  */
 package mormontrail.view;
+
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mormontrail.controller.GameController;
+import mormontrail.controller.InventoryController;
+import mormontrail.exception.InventoryControlException;
 import mormontrail.view.StartProgramView;
 import mormontrail.model.Player;
+
 /**
  *
  * @author jared
  */
-public class InventoryView extends View{ 
+public class InventoryView extends View {
 
-    private void showInventory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void sellInventory() throws InventoryControlException {
+        throw new InventoryControlException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void sellInventory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-public InventoryView() {
+    public InventoryView() {
         super("\nInventory Menu"
-            + "\nV - View Inventory"
-            + "\nS - Sell Inventory"
-            + "\nQ - Quit"
-            + "\n");
-        
- }
+                + "\nV - View Inventory"
+                + "\nS - Sell Inventory"
+                + "\nQ - Quit"
+                + "\n");
+
+    }
+
     @Override
     public boolean doAction(String selection) {
-        
-      
+
         char charSel = selection.charAt(0);
-		
+
         switch (charSel) {
-           case 'V':
+            case 'V':
                 this.showInventory();
                 break;
-            case 'S':
-                this.sellInventory();
-                break;
+            case 'S': {
+                try {
+                    this.sellInventory();
+                } catch (InventoryControlException ex) {
+                    Logger.getLogger(InventoryView.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            break;
             case 'Q':
                 return true;
             default:
@@ -52,9 +58,9 @@ public InventoryView() {
         }
         return false;
     }
-       
-        
-			
-}
 
-        
+    private void showInventory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+}

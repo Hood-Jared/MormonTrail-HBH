@@ -9,12 +9,13 @@ package mormontrail.exception;
  *
  * @author jared
  */
-public class MapControllerException extends Exception{
-    
-    public MapControllerException(){
-        
+public class MapControllerException extends Exception {
+
+    public MapControllerException() {
+
     }
-    public MapControllerException(String message){
+
+    public MapControllerException(String message) {
         super(message);
     }
 }

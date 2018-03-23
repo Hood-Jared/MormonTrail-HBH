@@ -4,38 +4,39 @@
  * and open the template in the editor.
  */
 package mormontrail.model;
-import java.io.Serializable;	
+
+import java.io.Serializable;
+
 /**
  *
  * @author heatherholt
  */
 public enum LocationType {
-	
-	Town("Town", 1),
-	Fort("Fort", 2),
-	River("River", 3),
-	Landmark("Landmark", 4);
-	
-	private String name;
-	private int type;
 
-	LocationType(String name, int type) {
-		this.name = name;
-		this.type = type;
-	}
+    Town("Town", 1),
+    Fort("Fort", 2),
+    River("River", 3),
+    Landmark("Landmark", 4);
 
-	public String getName() {
-		return name;
-	}
+    private String name;
+    private int type;
 
-	public int getType() {
-		return type;
-	}
+    LocationType(String name, int type) {
+        this.name = name;
+        this.type = type;
+    }
 
-	@Override
-	public String toString() {
-		return "LocationType{" + "name=" + name + ", type=" + type + '}';
-	}
-	
-	
+    public String getName() {
+        return name;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        return "LocationType{" + "name=" + name + ", type=" + type + '}';
+    }
+
 }

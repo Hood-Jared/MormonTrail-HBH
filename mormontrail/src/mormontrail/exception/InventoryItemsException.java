@@ -10,12 +10,12 @@ package mormontrail.exception;
  * @author jared
  */
 public class InventoryItemsException extends Exception {
-    
-    public InventoryItemsException(String message){
+
+    public InventoryItemsException(String message) {
         super(message);
-    
+
     }
-  
+
     public InventoryItemsException(String message, Throwable cause) {
         super(message, cause);
     }
@@ -23,7 +23,5 @@ public class InventoryItemsException extends Exception {
     public InventoryItemsException(Throwable cause) {
         super(cause);
     }
-    
-  
-    }
 
+}

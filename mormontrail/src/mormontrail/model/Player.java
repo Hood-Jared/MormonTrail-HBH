@@ -10,36 +10,35 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
-*
-* @author Chaskiel, Jared, Heather
-*/
-public class Player implements Serializable{
-   
-	//class instance variables
-	private String name;
-	private Actor playerActor;
-	/*private int stamina;
+ *
+ * @author Chaskiel, Jared, Heather
+ */
+public class Player implements Serializable {
+
+    //class instance variables
+    private String name;
+    private Actor playerActor;
+    /*private int stamina;
 	private int age;
 	private int gender;
 	private int huntingSkill;
 	private int gatheringSkill;
 	private int money;
 	private int healthStatus;*/
-	private ArrayList<Game> games = new ArrayList<Game>();
-   
+    private ArrayList<Game> games = new ArrayList<Game>();
+
     public Player() {
     }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	
-	/*public int getStamina() {
+    /*public int getStamina() {
 		return stamina;
 	}
 
@@ -94,56 +93,53 @@ public class Player implements Serializable{
 	public void setHealthStatus(int healthStatus) {
 		this.healthStatus = healthStatus;
 	}*/
+    public ArrayList<Game> getGames() {
+        return games;
+    }
 
-	public ArrayList<Game> getGames() {
-		return games;
-	}
+    public void setGames(ArrayList<Game> games) {
+        this.games = games;
+    }
 
-	public void setGames(ArrayList<Game> games) {
-		this.games = games;
-	}
+    public Actor getPlayerActor() {
+        return playerActor;
+    }
 
-	public Actor getPlayerActor() {
-		return playerActor;
-	}
+    public void setPlayerActor(Actor playerActor) {
+        this.playerActor = playerActor;
+    }
 
-	public void setPlayerActor(Actor playerActor) {
-		this.playerActor = playerActor;
-	}
-	
-	
+    @Override
+    public String toString() {
+        return "Player{" + "name=" + name + /*", stamina=" + stamina + ", age=" + age + ", gender=" + gender + ", huntingSkill=" + huntingSkill + ", gatheringSkill=" + gatheringSkill + ", money=" + money + ", healthStatus=" + healthStatus + */ '}';
+    }
 
-	@Override
-	public String toString() {
-		return "Player{" + "name=" + name + /*", stamina=" + stamina + ", age=" + age + ", gender=" + gender + ", huntingSkill=" + huntingSkill + ", gatheringSkill=" + gatheringSkill + ", money=" + money + ", healthStatus=" + healthStatus + */'}';
-	}
-
-	@Override
-	public int hashCode() {
-		int hash = 3;
-		hash = 43 * hash + Objects.hashCode(this.name);
-		/*hash = 43 * hash + this.stamina;
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 43 * hash + Objects.hashCode(this.name);
+        /*hash = 43 * hash + this.stamina;
 		hash = 43 * hash + this.age;
 		hash = 43 * hash + this.gender;
 		hash = 43 * hash + this.huntingSkill;
 		hash = 43 * hash + this.gatheringSkill;
 		hash = 43 * hash + this.money;
 		hash = 43 * hash + this.healthStatus;*/
-		return hash;
-	}
+        return hash;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj == null) {
-			return false;
-		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		/*final Player other = (Player) obj;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        /*final Player other = (Player) obj;
 		if (this.stamina != other.stamina) {
 			return false;
 		}
@@ -168,12 +164,7 @@ public class Player implements Serializable{
 		if (!Objects.equals(this.name, other.name)) {
 			return false;
 		}*/
-		return true;
-	}
+        return true;
+    }
 
-	
-  
-   
-   
-   
 }

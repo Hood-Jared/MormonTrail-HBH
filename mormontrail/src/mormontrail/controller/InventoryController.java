@@ -19,7 +19,7 @@ public class InventoryController implements Serializable {
     public static int calcInventoryUsage(int quantity, int daysOfTravel, int qtyActors) throws InventoryControlException {
 
         if (quantity <= 0 || quantity >= 100) {
-           throw new InventoryControlException("Enter a number between 0-100.");
+            throw new InventoryControlException("Enter a number between 0-100.");
         }
 
         return invItemUsage = quantity * (qtyActors * daysOfTravel);
@@ -57,10 +57,12 @@ public class InventoryController implements Serializable {
         System.out.println("\nTest");
     }
 
-    public static int[] main(String[] args) {
-        int[] input = {4, 2, 9, 6, 23, 12, 34, 0, 1};
-        return input;
-
+    // public static int[] main(String[] args) {
+    //     int[] input = {4, 2, 9, 6, 23, 12, 34, 0, 1};
+    //     return input;
+    //  }
+    public static void quantity() throws InventoryControlException {
+        throw new InventoryControlException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

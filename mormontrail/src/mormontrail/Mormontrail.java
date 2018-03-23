@@ -19,15 +19,14 @@ import mormontrail.view.StartProgramView;
  */
 public class Mormontrail {
 
-	
-	private static Game currentGame = null;
-	private static Player player = null;
-	
+    private static Game currentGame = null;
+    private static Player player = null;
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       /* Location locationEight = new Location();
+        /* Location locationEight = new Location();
 		
 		locationEight.setName("Fort Bridger");
 		locationEight.setSceneType(LocationType.Fort);
@@ -44,31 +43,27 @@ public class Mormontrail {
 //		mapOne.setLocation(locationEight);
 		
 		System.out.println(mapOne.toString());
-*/
-       
-       StartProgramView startProgramView = new StartProgramView();
-       startProgramView.display(player);
-       
-	  
-       
+         */
+
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.display(player);
+
     }
 
-	public static Game getCurrentGame() {
-		return currentGame;
-	}
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
 
-	public static void setCurrentGame(Game currentGame) {
-		Mormontrail.currentGame = currentGame;
-	}
+    public static void setCurrentGame(Game currentGame) {
+        Mormontrail.currentGame = currentGame;
+    }
 
-	public static Player getPlayer() {
-		return player;
-	}
+    public static Player getPlayer() {
+        return player;
+    }
 
-	public static void setPlayer(Player player) {
-		Mormontrail.player = player;
-	}
-	
+    public static void setPlayer(Player player) {
+        Mormontrail.player = player;
+    }
 
-	
 }

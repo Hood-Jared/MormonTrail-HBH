@@ -10,9 +10,9 @@ package mormontrail.model;
  * @author heatherholt
  */
 public enum ActorType {
-	Ma,
-	Pa,
-	Brother,
-	Sister,
-	Me;
+    Ma,
+    Pa,
+    Brother,
+    Sister,
+    Me;
 }

@@ -4,27 +4,27 @@
  * and open the template in the editor.
  */
 package mormontrail.view;
+
 import java.util.Scanner;
 import mormontrail.controller.GameController;
 import mormontrail.view.StartProgramView;
 import mormontrail.model.Player;
 
-
 public class MainMenuView extends View {
 
-   public MainMenuView() {
-	   super("\nMAIN MENU"
-			   + "\n I'm here now"
-                     + "\nN - Start New Game"
-                     + "\nG - Go to General Store"
-                     + "\nR - Restart Saved Game"
-                     + "\nH - Go to Help Menu"
-                     +"\nM - Go to game menu view"
-                     + "\nQ - Quit"
-                     + "\n");
-   }
-            
-	/* private boolean displayWelcome() {
+    public MainMenuView() {
+        super("\nMAIN MENU"
+                + "\n I'm here now"
+                + "\nN - Start New Game"
+                + "\nG - Go to General Store"
+                + "\nR - Restart Saved Game"
+                + "\nH - Go to Help Menu"
+                + "\nM - Go to game menu view"
+                + "\nQ - Quit"
+                + "\n");
+    }
+
+    /* private boolean displayWelcome() {
 		System.out.println  ( "\n*       WELCOME TO THE MORMON TRAIL        *"
                 +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
                 +"\n*                                          *"
@@ -39,8 +39,7 @@ public class MainMenuView extends View {
                 +"\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*" );
 		return true;
     } */
-    
-    /* private String getPlayerName(String args[]){
+ /* private String getPlayerName(String args[]){
         
         boolean isValidName = false;
         String name = "";
@@ -60,21 +59,14 @@ public class MainMenuView extends View {
             }         
         }
         return name;
-    } */  
-    
-    /* private void displayWelcome(String playerName){
+    } */
+ /* private void displayWelcome(String playerName){
         System.out.println("============================");
         System.out.println("Welcome " + playerName + ".");
         System.out.println("Enjoy the game!");
         System.out.println("============================");
     } */
-
-
-
-	
-
-
-/* public boolean mainMenuView() {
+ /* public boolean mainMenuView() {
         System.out.println("\nMAIN MENU"
                      + "\nN - Start New Game"
                      + "\nR - Restart Saved Game"
@@ -84,15 +76,12 @@ public class MainMenuView extends View {
 		
 		return true;
     } */
-
-
     @Override
     public boolean doAction(String value/*, Player player*/) {
-		
-		value = value.toUpperCase();
+
+        value = value.toUpperCase();
 
         char charSel = value.charAt(0);
-		
 
         switch (charSel) {
             case 'N':
@@ -103,14 +92,14 @@ public class MainMenuView extends View {
                 break;
             case 'G':
                 getGameMenu();
-                break;   
+                break;
             case 'H':
-				getMenu();
+                getMenu();
                 break;
             case 'Q':
                 return true;
-                case 'M':
-                    getOtherMap();
+            case 'M':
+                getOtherMap();
                 /*this.startNewGame(player);*/
                 break;
             default:
@@ -126,41 +115,34 @@ public class MainMenuView extends View {
             GameController.display();
          
     }*/
-    
-
-    /* public void restartGame() {
+ /* public void restartGame() {
         
              StartExistingGameView gameMenu = new StartExistingGameView();
         gameMenu.display();
     }*/
+    public void getGameMenu() {
+        GeneralStoreView gsView = new GeneralStoreView();
+        gsView.display();
+    }
 
-   public void getGameMenu() {
-		GeneralStoreView gsView = new GeneralStoreView();
-		gsView.display();
-   }
-    
     public void getMenu() {
-		HelpMenuView helpMenuView = new HelpMenuView();
-		helpMenuView.display();
-		
-		/* boolean end = false;
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
+
+        /* boolean end = false;
 		while (!end) {
 			HelpMenuView helpMenuView = new HelpMenuView();
 			helpMenuView.display();
 			end = helpMenuView.doAction(getInput());
-		}	*/	
+		}	*/
     }
 
     /* @Override
     public boolean doAction(String value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }*/
-
     private void getOtherMap() {
         GameMenuView gameMenuView = new GameMenuView();
-		gameMenuView.display();
+        gameMenuView.display();
     }
 }
-   
-  
-

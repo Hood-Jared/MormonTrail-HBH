@@ -10,5 +10,5 @@ package mormontrail.model;
  * @author jared
  */
 public class NewClass {
-    
+
 }

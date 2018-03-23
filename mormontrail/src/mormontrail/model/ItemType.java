@@ -10,7 +10,7 @@ package mormontrail.model;
  * @author jared
  */
 public enum ItemType {
-     food,
-     ammo,
-     wheel;
+    food,
+    ammo,
+    wheel;
 }

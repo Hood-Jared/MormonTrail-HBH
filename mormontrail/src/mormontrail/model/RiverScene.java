@@ -3,25 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package mormontrail.model;
+
 import java.io.Serializable;
 import java.util.Objects;
-
 
 /**
  *
  * @author Chaskiel
  */
-public class RiverScene implements Serializable{
-    
-    
-     private String weight;
-     
-     private String riverDepth; 
-     
-     public RiverScene(){ 
-}
+public class RiverScene implements Serializable {
+
+    private String weight;
+
+    private String riverDepth;
+
+    public RiverScene() {
+    }
 
     public String getWeight() {
         return weight;
@@ -51,8 +49,6 @@ public class RiverScene implements Serializable{
     public String toString() {
         return "River{" + "weight=" + weight + ", riverDepth=" + riverDepth + '}';
     }
-    
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -74,5 +70,5 @@ public class RiverScene implements Serializable{
         }
         return true;
     }
-     
+
 }
