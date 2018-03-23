@@ -5,6 +5,7 @@
  */
 package mormontrail.controller;
 
+import mormontrail.exception.InventoryControlException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -41,7 +42,7 @@ public class InventoryControllerTest {
      * Test of calcInventoryUsage method, of class InventoryController.
      */
     @Test
-    public void testCalcInventoryUsage() {
+    public void testCalcInventoryUsage() throws InventoryControlException {
         System.out.println("calcInventoryUsage");
         int quantity = 101;
         int daysOfTravel = 0;
