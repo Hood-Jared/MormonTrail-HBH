@@ -14,5 +14,6 @@ public enum ActorType {
     Pa,
     Brother,
     Sister,
-    Me;
+    Me,
+    Baby;
 }
