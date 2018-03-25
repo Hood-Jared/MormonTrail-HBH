@@ -11,6 +11,10 @@ package mormontrail.exception;
  */
 public class InventoryControlException extends Exception {
 
+    public boolean getMessage;
+       String message;
+       
+            
     public InventoryControlException() {
     }
 

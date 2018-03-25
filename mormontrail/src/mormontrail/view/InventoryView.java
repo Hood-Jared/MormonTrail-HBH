@@ -24,6 +24,11 @@ public class InventoryView extends View {
         throw new InventoryControlException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    private void showInventory() throws InventoryControlException {
+
+        throw new InventoryControlException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public InventoryView() {
         super("\nInventory Menu"
                 + "\nV - View Inventory"
@@ -39,28 +44,36 @@ public class InventoryView extends View {
         char charSel = selection.charAt(0);
 
         switch (charSel) {
-            case 'V':
-                this.showInventory();
-                break;
-            case 'S': {
+            case 'V': {
+                try {
+                    this.showInventory();
+                } catch (InventoryControlException ex) {
+
+                    System.out.println(ex.getMessage);
+                    return false;
+                }
+            }
+
+            break;
+            case 'S':
                 try {
                     this.sellInventory();
                 } catch (InventoryControlException ex) {
-                    Logger.getLogger(InventoryView.class.getName()).log(Level.SEVERE, null, ex);
+                    {
+                        System.out.println(ex.getMessage);
+                        return false;
+                    }
+
                 }
-            }
-            break;
+
+                break;
             case 'Q':
                 return true;
             default:
                 System.out.println("Invalid Input - Please try again.");
                 break;
+
         }
         return false;
     }
-
-    private void showInventory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }

@@ -17,6 +17,7 @@ public class MainMenuView extends View {
                 + "\n I'm here now"
                 + "\nN - Start New Game"
                 + "\nG - Go to General Store"
+                + "\nI - Inventory Menu"
                 + "\nR - Restart Saved Game"
                 + "\nH - Go to Help Menu"
                 + "\nM - Go to game menu view"
@@ -93,6 +94,9 @@ public class MainMenuView extends View {
             case 'G':
                 getGameMenu();
                 break;
+            case 'I':
+                getInventoryMenu();
+                break;
             case 'H':
                 getMenu();
                 break;
@@ -144,5 +148,10 @@ public class MainMenuView extends View {
     private void getOtherMap() {
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
+    }
+
+    private void getInventoryMenu() {
+        InventoryView inventoryView = new InventoryView();
+        inventoryView.display();
     }
 }
