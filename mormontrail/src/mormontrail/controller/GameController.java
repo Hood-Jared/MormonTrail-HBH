@@ -9,6 +9,7 @@ import mormontrail.exception.GameControllerException;
 import mormontrail.exception.InventoryItemsException;
 import mormontrail.exception.MapControllerException;
 import java.io.Serializable;
+import static java.lang.System.console;
 import java.lang.reflect.Array;
 import java.util.Objects;
 import java.util.Random;
@@ -25,6 +26,7 @@ import static mormontrail.model.ItemType.food;
 import mormontrail.model.Location;
 import mormontrail.model.Map;
 import mormontrail.model.Player;
+import java.io.PrintWriter;
 
 /**
  *
@@ -35,6 +37,11 @@ public class GameController implements Serializable {
     private Player player;
     private InventoryItems[] inventory;
     private Map map;
+    
+    
+    public void savegame(Game game){
+        System.out.println("Its working");
+    } 
 
     public static int calcDailyFoodUsage(int amount, int noPeople) {
 
