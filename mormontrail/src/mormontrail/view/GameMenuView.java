@@ -66,42 +66,42 @@ public class GameMenuView extends View {
             break;
 
             default:
-                System.out.println("Invalid Input! - Please try again.");
+                ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
                 break;
         }
         return false;
     }
 
     public void displayMap() throws MapControllerException {
-        System.out.println("display the map");
+        this.console.println("display the map");
 
         Game game = getCurrentGame();
 
         Location[][] locations = game.getMap().getLocations();
 
-        System.out.println("Im the map");
-        System.out.println("1    2    3    4    5    6    7    8    9    10");
+        this.console.println("Im the map");
+        this.console.println("1    2    3    4    5    6    7    8    9    10");
 
         for (int i = 0; i < 10; i++) {
-            System.out.println("---------------------------------------------------");
-            System.out.print(i + 1);
+            this.console.println("---------------------------------------------------");
+            this.console.print(i + 1);
 
             for (int j = 0; j < 10; j++) {
-                System.out.print("|");
+                this.console.print("|");
                 Location location = locations[i][j];
 
                 if (location.isVisited()) {
-                    System.out.print(" LT ");
+                    this.console.print(" LT ");
 
                 } else {
-                    System.out.print(" ?? ");
+                    this.console.print(" ?? ");
                 }
 
             }
-            System.out.print("|");
+            this.console.print("|");
         }
 
-        System.out.println("---------------------------------------------------");
+        this.console.println("---------------------------------------------------");
 
     }
 

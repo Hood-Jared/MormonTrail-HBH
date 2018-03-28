@@ -53,7 +53,7 @@ public class GeneralStoreView extends View {
             case 'E':
                 return true;
             default:
-                System.out.println("Invalid Input - Please try again.");
+                ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
                 break;
         }
         return false;
@@ -62,11 +62,11 @@ public class GeneralStoreView extends View {
 
     private static int addInventoryFood() throws GeneralStoreViewException {
 
-        System.out.println("How Many Pounds of Food do you want to Purchase?");
+        this.console.println("How Many Pounds of Food do you want to Purchase?");
 
-        Scanner input = new Scanner(System.in);
+        
 
-        String sc = "";
+        String sc = this.keyboard.readLine();
 
         int amount = Integer.parseInt(sc);
 
@@ -74,7 +74,7 @@ public class GeneralStoreView extends View {
 
             return amount;
         } else {
-            System.out.println("Input is invalid - Please choose at least 100 lbs");
+            ErrorView.display(this.getClass().getName(), "Input is invalid - Please choose at least 100 lbs");
         }
 
         throw new GeneralStoreViewException("choose a number between 100 to 5000.");

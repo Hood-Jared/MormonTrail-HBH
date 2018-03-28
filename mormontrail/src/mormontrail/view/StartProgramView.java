@@ -47,22 +47,22 @@ RETURN inputs
          */
         String inputs = new String();
 
-        System.out.println("The Game is Starting!");
+        this.console.println("The Game is Starting!");
 
         boolean valid = false;
 
         while (valid == false) {
 
-            System.out.println("Please Enter your Name");
+            this.console.println("Please Enter your Name");
 
-            Scanner input = new Scanner(System.in);
-            String name = input.nextLine();
+            
+            String name = this.keyboard.readLine();
             String trim = name.trim();
 
             int length = trim.length();
 
             if (length <= 1) {
-                System.out.println("re-enter a name with more than one letter");
+                ErrorView.display(this.getClass().getName(), "re-enter a name with more than one letter");
 
             } else {
                 valid = true;
@@ -71,7 +71,7 @@ RETURN inputs
 
         }
 
-        System.out.println("getInput (called");
+        this.console.println("getInput (called");
 
         //String[] inputs = new String [1];
         inputs = "testInput";
@@ -91,10 +91,10 @@ RETURN inputs
             Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (player == null) {
-            System.out.println("Could not create the player. Enter a different name.");
+            ErrorView.display(this.getClass().getName(), "Could not create the player. Enter a different name.");
             return false;
         }
-        System.out.println("** Welcome to the game " + playersName + "! **");
+        this.console.println("** Welcome to the game " + playersName + "! **");
 
         return true;
     }

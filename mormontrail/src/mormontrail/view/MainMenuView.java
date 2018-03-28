@@ -107,7 +107,7 @@ public class MainMenuView extends View {
                 /*this.startNewGame(player);*/
                 break;
             default:
-                System.out.println("Invalid Input - Please try again.");
+                ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
                 break;
         }
         return false;

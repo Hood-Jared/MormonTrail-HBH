@@ -45,7 +45,7 @@ public class HelpMenuView extends View {
 
         switch (charSel) {
             case 'G':
-                System.out.println("\n*       WELCOME TO THE MORMON TRAIL        *"
+                this.console.println("\n*       WELCOME TO THE MORMON TRAIL        *"
                         + "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
                         + "\n*                                          *"
                         + "\n*          Get your family ready!          *"
@@ -60,7 +60,7 @@ public class HelpMenuView extends View {
                         + "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
                 break;
             case 'M':
-                System.out.println("\n               HOW TO MOVE                 *"
+                this.console.println("\n               HOW TO MOVE                 *"
                         + "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
                         + "\n*                                          *"
                         + "\n*     Each day you can change your pace    *"
@@ -72,7 +72,7 @@ public class HelpMenuView extends View {
                         + "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
                 break;
             case 'T':
-                System.out.println("\n                    TIPS                    *"
+                this.console.println("\n                    TIPS                    *"
                         + "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*"
                         + "\n*                                          *"
                         + "\n*          Always Caulk the Wagon!         *"
@@ -100,7 +100,7 @@ public class HelpMenuView extends View {
                 break;
 
             default:
-                System.out.println("Invalid Input! - Please try again.");
+                ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
                 break;
         }
         return false;

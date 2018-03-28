@@ -53,22 +53,22 @@ private String getMenuOption() {
 
         switch (value) {
             case "A":
-                System.out.println("go around ");
+                this.console.println("go around ");
                 goAround();
                 break;
 
             case "B":
-                System.out.println("Find a path ");
+                this.console.println("Find a path ");
                 findPath();
                 break;
 
             case "C":
-                System.out.println("Take a ferry ");
+                this.console.println("Take a ferry ");
                 payFerry();
                 break;
 
             default:
-                System.out.println("Enter a diffrent output.");
+                ErrorView.display(this.getClass().getName(), "Enter a diffrent output.");
                 break;
         }
         return false;
@@ -97,9 +97,9 @@ return selection;
      */
     private boolean riverInches() {
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a guess of the rivers depth: ");
-        int depth = input.nextInt();
+        
+        this.console.print("Enter a guess of the rivers depth: ");
+        int depth = this.keyboard.readLine();
         int inches[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
         for (int i = 0; i < inches.length; i++) {
@@ -114,15 +114,15 @@ return selection;
     }
 
     private void goAround() {
-        System.out.println("It works");
+        this.console.println("It works");
     }
 
     private void findPath() {
-        System.out.println("It works");
+        this.console.println("It works");
     }
 
     private void payFerry() {
-        System.out.println("It works");
+        this.console.println("It works");
     }
 
 }

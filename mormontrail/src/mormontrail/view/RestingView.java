@@ -32,7 +32,7 @@ public class RestingView extends View {
 
         int hoursToRest;
         hoursToRest = distance * 24 / 20;
-        System.out.println("You must rest " + hoursToRest + " hours");
+        this.console.println("You must rest " + hoursToRest + " hours");
 
         return true;
     }

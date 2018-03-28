@@ -29,6 +29,7 @@ public class Mormontrail {
     private static Player player = null;
 	private static PrintWriter outFile = null;
 	private static BufferedReader inFile = null;
+	private static PrintWriter logFile = null;
 
     /**
      * @param args the command line arguments
@@ -58,6 +59,8 @@ public class Mormontrail {
 			
 			Mormontrail.outFile = new PrintWriter(System.out, true);
 			
+			Mormontrail.logFile = new PrintWriter("logFile.txt");
+			
 			StartProgramView startProgramView = new StartProgramView();
 			startProgramView.display(player);
 		
@@ -75,6 +78,8 @@ public class Mormontrail {
 					Mormontrail.inFile.close();
 				if (Mormontrail.outFile != null)
 					Mormontrail.outFile.close();
+				if (Mormontrail.logFile != null)
+					Mormontrail.logFile.close();
 			} catch (IOException ex) {
 				System.out.println("Error closing files");
 				return;
@@ -114,6 +119,15 @@ public class Mormontrail {
 	public static void setInFile(BufferedReader inFile) {
 		Mormontrail.inFile = inFile;
 	}
+
+	public static PrintWriter getLogFile() {
+		return logFile;
+	}
+
+	public static void setLogFile(PrintWriter logFile) {
+		Mormontrail.logFile = logFile;
+	}
+	
 	
 	
 

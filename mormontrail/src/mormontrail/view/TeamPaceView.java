@@ -55,15 +55,15 @@ private String getMenuOption() {
         String yes = "YES";
         String no = "NO";
 
-        Scanner userInput = new Scanner(System.in);
-        System.out.println("Are you sure? type YES or NO:");
+        
+        this.console.println("Are you sure? type YES or NO:");
 
-        String input = userInput.next();
+        String input = this.keyboard.readLine();
 
         if (input.equals(yes)) {
-            System.out.println("you went: " + distance + " miles");
+            this.console.println("you went: " + distance + " miles");
         } else {
-            System.out.println("Enter another amount:");
+            this.console.println("Enter another amount:");
             return false;
 
         }

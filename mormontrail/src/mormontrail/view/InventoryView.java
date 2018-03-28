@@ -49,7 +49,7 @@ public class InventoryView extends View {
                     this.showInventory();
                 } catch (InventoryControlException ex) {
 
-                    System.out.println(ex.getMessage);
+                    ErrorView.display(this.getClass().getName(), ex.getMessage());
                     return false;
                 }
             }
@@ -60,7 +60,7 @@ public class InventoryView extends View {
                     this.sellInventory();
                 } catch (InventoryControlException ex) {
                     {
-                        System.out.println(ex.getMessage);
+                        ErrorView.display(this.getClass().getName(), ex.getMessage());
                         return false;
                     }
 
@@ -70,7 +70,7 @@ public class InventoryView extends View {
             case 'Q':
                 return true;
             default:
-                System.out.println("Invalid Input - Please try again.");
+                ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
                 break;
 
         }

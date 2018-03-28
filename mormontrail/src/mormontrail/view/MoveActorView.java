@@ -25,7 +25,7 @@ public class MoveActorView extends View {
 	private String[] getInputs() {
 		String[] inputs = new String[2];
 		
-		System.out.println("To move an actor, please enter the new row and column.");
+		this.console.println("To move an actor, please enter the new row and column.");
 		String input1 = getInput();
 		inputs[0] = input1;
 		
@@ -44,7 +44,7 @@ public class MoveActorView extends View {
 			newRow = Integer.parseInt(row);
 			newCol = Integer.parseInt(column);
 		} catch (NumberFormatException e) {
-			System.out.println("The row and column must be a number.");
+			ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());
 			return false;
 		}
 		
@@ -54,11 +54,11 @@ public class MoveActorView extends View {
 		try {
 			Location newLocation = MapControl.moveActor(actor, newRow, newCol);
 		} catch (MapControllerException e) {
-			System.out.println(e.getMessage());
+			ErrorView.display(this.getClass().getName(), e.getMessage());
 			return false;
 		}
 		
-		System.out.println(/*RegularScene.getdescription()*/"Scene Description");
+		this.console.println(/*RegularScene.getdescription()*/"Scene Description");
 		return true;
 	}
 

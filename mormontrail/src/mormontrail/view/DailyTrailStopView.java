@@ -33,7 +33,7 @@ public class DailyTrailStopView extends View {
             case 'Q':
                 return true;
             default:
-                System.out.println("Invalid Input - Please try again.");
+                ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
                 break;
         }
         return false;
