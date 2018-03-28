@@ -5,6 +5,12 @@
  */
 package mormontrail;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mormontrail.model.Game;
 import mormontrail.model.Location;
 import mormontrail.model.LocationType;
@@ -21,6 +27,8 @@ public class Mormontrail {
 
     private static Game currentGame = null;
     private static Player player = null;
+	private static PrintWriter outFile = null;
+	private static BufferedReader inFile = null;
 
     /**
      * @param args the command line arguments
@@ -44,9 +52,34 @@ public class Mormontrail {
 		
 		System.out.println(mapOne.toString());
          */
-
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display(player);
+		
+		try {
+			Mormontrail.inFile = new BufferedReader(new InputStreamReader(System.in));
+			
+			Mormontrail.outFile = new PrintWriter(System.out, true);
+			
+			StartProgramView startProgramView = new StartProgramView();
+			startProgramView.display(player);
+		
+		} catch (Throwable e) {
+			System.out.println("Exception: " + e.toString() +
+								"\nCause: " + e.getCause() +
+								"\nMessage: " + e.getMessage());
+			e.printStackTrace();;
+		}
+		
+		finally {
+			
+			try {
+				if (Mormontrail.inFile != null)
+					Mormontrail.inFile.close();
+				if (Mormontrail.outFile != null)
+					Mormontrail.outFile.close();
+			} catch (IOException ex) {
+				System.out.println("Error closing files");
+				return;
+			}
+		}
 
     }
 
@@ -65,5 +98,23 @@ public class Mormontrail {
     public static void setPlayer(Player player) {
         Mormontrail.player = player;
     }
+
+	public static PrintWriter getOutFile() {
+		return outFile;
+	}
+
+	public static void setOutFile(PrintWriter outFile) {
+		Mormontrail.outFile = outFile;
+	}
+
+	public static BufferedReader getInFile() {
+		return inFile;
+	}
+
+	public static void setInFile(BufferedReader inFile) {
+		Mormontrail.inFile = inFile;
+	}
+	
+	
 
 }
