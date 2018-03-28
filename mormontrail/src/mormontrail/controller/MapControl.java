@@ -83,9 +83,9 @@ public class MapControl {
         }
     }
 
-    private static Location[][] createLocations(int rows, int columns) {
+    private static Location[][] createLocations(int rows, int columns) throws MapControllerException {
 		if (rows < 1 || columns < 1) {
-			return null;
+			throw new MapControllerException("Check rows and/or columns.");
 		}
 		
 		Location[][] locations = null;
