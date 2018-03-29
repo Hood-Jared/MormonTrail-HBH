@@ -88,8 +88,8 @@ public class MainMenuView extends View {
             case 'N':
                 /*this.startNewGame(player);*/
                 break;
-            case 'R':
-                /*restartGame();*/
+            case 'R': // Get a Saved Game
+                this.startSavedGame();
                 break;
             case 'G':
                 getGameMenu();
@@ -153,5 +153,10 @@ public class MainMenuView extends View {
     private void getInventoryMenu() {
         InventoryView inventoryView = new InventoryView();
         inventoryView.display();
+    }
+
+    private void startSavedGame() {
+        StartSavedGameView startSavedView = new StartSavedGameView();
+        startSavedView.display();
     }
 }
