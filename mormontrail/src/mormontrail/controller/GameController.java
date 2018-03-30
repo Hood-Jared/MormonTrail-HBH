@@ -5,6 +5,9 @@
  */
 package mormontrail.controller;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import mormontrail.exception.GameControllerException;
 import mormontrail.exception.InventoryItemsException;
 import mormontrail.exception.MapControllerException;
@@ -34,14 +37,25 @@ import java.io.PrintWriter;
  */
 public class GameController implements Serializable {
 
+    public static void saveGame(Game game, String filePath) throws GameControllerException, IOException {
+        
+        if (game== null ||filePath.isEmpty()){
+           throw new GameControllerException();
+        }
+        ObjectOutputStream output = new ObjectOutputStream(
+           new FileOutputStream (filePath));           
+            output.writeObject(game);
+            
+        
+           
+    }
+
     private Player player;
     private InventoryItems[] inventory;
     private Map map;
     
     
-    public void savegame(Game game){
-        System.out.println("Its working");
-    } 
+   
 
     public static int calcDailyFoodUsage(int amount, int noPeople) {
 

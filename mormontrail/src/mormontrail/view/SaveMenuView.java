@@ -5,6 +5,12 @@
  */
 package mormontrail.view;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static mormontrail.Mormontrail.getCurrentGame;
+import mormontrail.controller.GameController;
+import mormontrail.exception.GameControllerException;
 import mormontrail.model.Game;
 
 /**
@@ -14,32 +20,57 @@ import mormontrail.model.Game;
 class SaveMenuView extends View{
     
    
-    private String[] getInputs() {
-         String[] inputs = new String[1];   
+    public String getInput() {
+         String input = "";
           
         console.println("push S to save the game");
         
         console.println("choose a spot to save at. ");
-        inputs[0]=getInput();
+        try {
+            input = keyboard.readLine();
+        } catch (IOException ex) {
+            Logger.getLogger(SaveMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
          
-        return inputs;
+        return input;
          }
         
     
     
     
     @Override
-    private boolean doAction(String[] inputs) {
-      String filePath = inputs[0];
-        char charSel = value.charAt(0);
+    public boolean doAction(String value) {
+    
+       
        Game game = getCurrentGame();
        
        try {
+           GameController.saveGame(game, value);
+                       
              
        }
-          
+        catch (IOException ex){
+            console.println(ex.getMessage());
+            
+            return false; 
+        }
+        catch (GameControllerException ex){
+            console.println(ex.getMessage());
+            
+            return false; 
+        }
+       
+       console.println("saved file to " + value);
+        return true;
+        
+        
+        
+        
+        
+       
 }
 
+    }
 
 
-}
+

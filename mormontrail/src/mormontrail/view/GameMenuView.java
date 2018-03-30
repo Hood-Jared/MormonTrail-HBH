@@ -103,6 +103,10 @@ public class GameMenuView extends View {
 
         this.console.println("---------------------------------------------------");
 
+        private void saveGame(){
+            SaveGameView saveGameView = new SaveGameView();
+            saveGameView.display();
+        }
     }
 
 }
