@@ -5,8 +5,10 @@
  */
 package mormontrail.controller;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import mormontrail.exception.GameControllerException;
 import mormontrail.exception.InventoryItemsException;
@@ -213,12 +215,19 @@ END */
         return actors;
     }
 
+   
+    public static void getSavedGame(String filepath) throws GameControllerException {
+        Game game = null;
 
+        try (FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
 
-        /*public createLocations() {
+            game = (Game) input.readObject();
+        } catch (Exception e) {
+            throw new GameControllerException(e.getMessage());
+        }
 
-            int noOfRows = 8;
-            int noOfColumns = 8;
-        }*/
+        Mormontrail.setCurrentGame(game);
+    }
 
 }

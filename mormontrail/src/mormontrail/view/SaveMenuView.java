@@ -17,7 +17,7 @@ import mormontrail.model.Game;
  *
  * @author Chaskiel
  */
-class SaveMenuView extends View{
+class SaveMenuView extends View {
     
    
     public String getInput() {
@@ -37,7 +37,7 @@ class SaveMenuView extends View{
         
     
     
-    
+   
     @Override
     public boolean doAction(String value) {
     
@@ -63,12 +63,12 @@ class SaveMenuView extends View{
        console.println("saved file to " + value);
         return true;
         
-        
+    }
         
         
         
        
-}
+
 
     }
 

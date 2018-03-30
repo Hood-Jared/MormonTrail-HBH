@@ -5,6 +5,7 @@
  */
 package mormontrail.view;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,7 +21,7 @@ import mormontrail.model.Player;
  */
 public class StartProgramView extends View {
 
-    public String getInputs() {
+    public String getInputs() throws IOException {
 
         /*  
         getInputs(): String[] {
@@ -108,7 +109,7 @@ RETURN inputs
 
 		return selection;
 		}*/
-    public void display(Player player) {
+    public void display(Player player) throws IOException {
         /*    endOfView = false
     DO
            inputs = getInputs()

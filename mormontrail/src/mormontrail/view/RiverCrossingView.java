@@ -5,6 +5,7 @@
  */
 package mormontrail.view;
 
+import java.io.IOException;
 import java.util.Scanner;
 import mormontrail.controller.GameController;
 import mormontrail.view.StartProgramView;
@@ -95,11 +96,11 @@ while (!valid){
 }
 return selection;
      */
-    private boolean riverInches() {
+    private boolean riverInches() throws IOException {
 
         
         this.console.print("Enter a guess of the rivers depth: ");
-        int depth = this.keyboard.readLine();
+        int depth = Integer.parseInt(this.keyboard.readLine());
         int inches[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
         for (int i = 0; i < inches.length; i++) {

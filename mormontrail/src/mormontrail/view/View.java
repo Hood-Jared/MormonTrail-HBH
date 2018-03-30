@@ -6,8 +6,11 @@
 package mormontrail.view;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mormontrail.Mormontrail;
 
 /**
@@ -55,7 +58,11 @@ public abstract class View implements ViewInterface {
 
             this.console.println("\n" + this.displayMessage);
 
-            value = this.keyboard.readLine();
+			try {
+				value = this.keyboard.readLine();
+			} catch (IOException ex) {
+				ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
+			}
             value = value.trim();
 
             if (value.length() < 1) {

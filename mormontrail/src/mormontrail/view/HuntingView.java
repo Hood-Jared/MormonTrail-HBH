@@ -17,6 +17,7 @@ public class HuntingView extends View {
                 + "\n   This is the Hunting View   "
                 + "\n   Press Q to return to the   "
                 + "\n         previous view        "
+                + "\n        View report           "
                 + "\n------------------------------");
     }
 
@@ -28,10 +29,17 @@ public class HuntingView extends View {
         switch (charSel) {
             case 'Q':
                 return true;
+                 case 'R': 
+                     report();
+                return true;
             default:
                 ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
                 break;
         }
         return false;
+    }
+
+    private void report() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

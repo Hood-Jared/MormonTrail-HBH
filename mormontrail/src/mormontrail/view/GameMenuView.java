@@ -25,6 +25,7 @@ public class GameMenuView extends View {
                 + "\n L - View location"
                 + "\n M - Move Location"
                 + "\n H - Help"
+                + "\n S - Save Current Game"
                 + "\n Q - Quit"
                 + "\n");
     }
@@ -60,10 +61,13 @@ public class GameMenuView extends View {
                     Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-			case 'M':
-				MoveActorView moveActorView = new MoveActorView();
-				moveActorView.display();
-            break;
+            case 'M':
+                MoveActorView moveActorView = new MoveActorView();
+                moveActorView.display();
+                break;
+            case 'S':
+                this.saveGame();
+                break;
 
             default:
                 ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
@@ -109,4 +113,9 @@ public class GameMenuView extends View {
         }
     }
 
+    private void saveGame() {
+        SaveMenuView saveMenuView = new SaveMenuView();
+        saveMenuView.display();
+
+    }
 }
