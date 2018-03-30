@@ -5,8 +5,11 @@
  */
 package mormontrail.view;
 
+import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mormontrail.controller.GameController;
 import mormontrail.view.StartProgramView;
 import mormontrail.model.Player;
@@ -58,7 +61,12 @@ private String getMenuOption() {
         
         this.console.println("Are you sure? type YES or NO:");
 
-        String input = this.keyboard.readLine();
+        String input = null;
+        try {
+            input = this.keyboard.readLine();
+        } catch (IOException ex) {
+           
+        }
 
         if (input.equals(yes)) {
             this.console.println("you went: " + distance + " miles");

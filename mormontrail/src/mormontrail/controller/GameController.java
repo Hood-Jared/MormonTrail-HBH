@@ -5,6 +5,10 @@
  */
 package mormontrail.controller;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import mormontrail.exception.GameControllerException;
 import mormontrail.exception.InventoryItemsException;
 import mormontrail.exception.MapControllerException;
@@ -37,11 +41,10 @@ public class GameController implements Serializable {
     private Player player;
     private InventoryItems[] inventory;
     private Map map;
-    
-    
-    public void savegame(Game game){
+
+    public void savegame(Game game) {
         System.out.println("Its working");
-    } 
+    }
 
     public static int calcDailyFoodUsage(int amount, int noPeople) {
 
@@ -199,12 +202,28 @@ END */
         return actors;
     }
 
+    public static void saveGame(Game game, String filepath) throws GameControllerException {
+        try (FileOutputStream test = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(test);
 
+            output.writeObject(game);
+        } catch (Exception e) {
+            throw new GameControllerException(e.getMessage());
+        }
+    }
 
-        /*public createLocations() {
+    public static void getSavedGame(String filepath) throws GameControllerException {
+        Game game = null;
 
-            int noOfRows = 8;
-            int noOfColumns = 8;
-        }*/
+        try (FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+
+            game = (Game) input.readObject();
+        } catch (Exception e) {
+            throw new GameControllerException(e.getMessage());
+        }
+
+        Mormontrail.setCurrentGame(game);
+    }
 
 }
