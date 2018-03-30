@@ -62,11 +62,12 @@ private String getMenuOption() {
         this.console.println("Are you sure? type YES or NO:");
 
         String input = null;
-        try {
-            input = this.keyboard.readLine();
-        } catch (IOException ex) {
-           
-        }
+		
+		try {
+			input = this.keyboard.readLine();
+		} catch (IOException ex) {
+			ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
+		}
 
         if (input.equals(yes)) {
             this.console.println("you went: " + distance + " miles");

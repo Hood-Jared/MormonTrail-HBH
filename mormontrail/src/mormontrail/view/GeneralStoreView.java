@@ -5,6 +5,7 @@
  */
 package mormontrail.view;
 
+import java.io.IOException;
 import mormontrail.exception.GeneralStoreViewException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -31,6 +32,7 @@ public class GeneralStoreView extends View {
 
     }
 
+	@Override
     public boolean doAction(String selection) {
 
         char charSel = selection.charAt(0);
@@ -40,8 +42,10 @@ public class GeneralStoreView extends View {
                 try {
                     this.addInventoryFood();
                 } catch (GeneralStoreViewException ex) {
-                    Logger.getLogger(GeneralStoreView.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                    ErrorView.display(this.getClass().getName(), "Please try again.");
+                } catch (IOException ex) {
+				ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
+			}
             }
             break;
             case 'A':
@@ -60,9 +64,9 @@ public class GeneralStoreView extends View {
 
     }
 
-    private static int addInventoryFood() throws GeneralStoreViewException {
+     public int addInventoryFood() throws GeneralStoreViewException, IOException {
 
-        this.console.println("How Many Pounds of Food do you want to Purchase?");
+       this.console.println("How Many Pounds of Food do you want to Purchase?");
 
         
 

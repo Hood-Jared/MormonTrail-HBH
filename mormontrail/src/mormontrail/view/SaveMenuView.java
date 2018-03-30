@@ -27,7 +27,7 @@ class SaveMenuView extends View{
         
     
     
-    
+   /* 
     @Override
     private boolean doAction(String[] inputs) {
       String filePath = inputs[0];
@@ -40,6 +40,14 @@ class SaveMenuView extends View{
           
 }
 
+   
 
 
+*/
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
