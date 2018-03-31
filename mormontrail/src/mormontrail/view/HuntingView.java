@@ -16,7 +16,7 @@ public class HuntingView extends View {
                 + "\n------------------------------"
                 + "\n   This is the Hunting View   "
                 + "\n   Press Q to return to the   "
-                + "\n         previous view        "
+                + "\n       previous view          "
                 + "\n        View report           "
                 + "\n------------------------------");
     }

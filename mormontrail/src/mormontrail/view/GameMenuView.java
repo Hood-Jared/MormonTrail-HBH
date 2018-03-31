@@ -24,6 +24,7 @@ public class GameMenuView extends View {
                 + "\n I - View list of items in inventory"
                 + "\n L - View location"
                 + "\n M - Move Location"
+                + "\n G - Hunting"
                 + "\n H - Help"
                 + "\n S - Save Current Game"
                 + "\n Q - Quit"
@@ -65,6 +66,11 @@ public class GameMenuView extends View {
                 MoveActorView moveActorView = new MoveActorView();
                 moveActorView.display();
                 break;
+                case 'G':
+                HuntingView huntingView = new HuntingView();
+                huntingView.display();
+                break;
+                
             case 'S':
                 this.saveGame();
                 break;
