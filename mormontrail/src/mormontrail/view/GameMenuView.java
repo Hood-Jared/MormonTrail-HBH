@@ -106,16 +106,12 @@ public class GameMenuView extends View {
         }
 
         this.console.println("---------------------------------------------------");
-
+    }
         private void saveGame(){
-            SaveGameView saveGameView = new SaveGameView();
+            SaveMenuView saveGameView = new SaveMenuView();
             saveGameView.display();
         }
-    }
+    
 
-    private void saveGame() {
-        SaveMenuView saveMenuView = new SaveMenuView();
-        saveMenuView.display();
-
-    }
+    
 }

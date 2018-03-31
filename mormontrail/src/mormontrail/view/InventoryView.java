@@ -5,6 +5,9 @@
  */
 package mormontrail.view;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,6 +36,7 @@ public class InventoryView extends View {
         super("\nInventory Menu"
                 + "\nV - View Inventory"
                 + "\nS - Sell Inventory"
+                + "\nP - Print Inventory List"
                 + "\nQ - Quit"
                 + "\n");
 
@@ -65,8 +69,16 @@ public class InventoryView extends View {
                     }
 
                 }
+            case 'P': {
+                try {
+                    doAction.PrintInventory();
+                } catch (FileNotFoundException ex) {
 
-                break;
+                    ErrorView.display(this.getClass().getName(), "Invalid Input - Please try again.");
+                    return false;
+                }
+            }
+            break;
             case 'Q':
                 return true;
             default:
@@ -75,5 +87,18 @@ public class InventoryView extends View {
 
         }
         return false;
+    }
+
+    private static class doAction {
+
+        private static void PrintInventory() throws FileNotFoundException {
+
+            File file = new File("C:/MormonTrail/file.txt");
+            PrintWriter printWriter = new PrintWriter("file.txt");
+            printWriter.println("hello");
+            printWriter.close();
+            
+        }
+
     }
 }
