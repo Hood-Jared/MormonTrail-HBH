@@ -37,8 +37,8 @@ public class HuntingView extends View {
                         + "\n*                  Deer                    *"
                         + "\n*                   Elk                    *"
                         + "\n*                  Rabbit                  *"
-                        + "\n*                                          *"
-                        + "\n*                                          *"
+                        + "\n*                   Bear                   *"
+                        + "\n*                   Duck                   *"
                         + "\n*                                          *"
                         + "\n*_*_*_*_*_*_*_*_*_*_*_*_*__*_*_*_*_*_*_*_*_*");
                    
